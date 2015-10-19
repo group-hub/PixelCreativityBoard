@@ -13,10 +13,12 @@ class Grid extends Migration
     public function up()
     {
         Schema::create('grid', function (Blueprint $table) {
+            $table->increments('id');
             $table->smallInteger('x');
             $table->smallInteger('y');
             $table->enum('color', ['red', 'green', 'blue', 'yellow'])->nullable();
-            $table->dateTime('expires_at')->nullable();
+            $table->timestamp('expires_at')->nullable();
+            $table->timestamps();
         });
     }
 

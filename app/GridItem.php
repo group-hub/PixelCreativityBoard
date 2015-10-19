@@ -12,4 +12,8 @@ class GridItem extends Model
 	 * @var string
 	 */
 	protected $table = 'grid';
+
+	protected $dates = [
+		'expires_at'
+	];
 }
