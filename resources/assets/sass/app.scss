@@ -1,4 +1,5 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "partials/reset";
+@import "constants/colors";
 
 html, body {
 	height: 100%;
@@ -19,11 +20,11 @@ body {
 	vertical-align: middle;
 }
 
-.content {
-	text-align: center;
+.grid {
+	width: 800px;
+	height: 600px;
+	background-color: $color-black;
 	display: inline-block;
-}
 
-.title {
-	font-size: 96px;
+	@import "partials/grid";
 }

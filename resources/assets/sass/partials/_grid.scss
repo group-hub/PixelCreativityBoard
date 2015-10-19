@@ -1,0 +1,26 @@
+table {
+	width: 100%;
+}
+
+tr {
+	width: 100%;
+}
+
+td {
+	width: 10px;
+	height: 10px;
+	border: 1px solid $white-color;
+	box-sizing: border-box;
+
+	&.green {
+		background-color: $color-green;
+	}
+
+	&.blue {
+		background-color: $color-blue;
+	}
+
+	&.red {
+		background-color: $color-red;
+	}
+}
