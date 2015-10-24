@@ -12,5 +12,9 @@ script:
   - touch storage/database.sqlite
   - php artisan migrate:install
   - php artisan migrate:refresh --seed --force
-  - vendor/bin/codecept run; fi
-  - vendor/bin/codecept --coverage-clover build/logs/clover.xml; fi
+  - vendor/bin/codecept run;
+  - vendor/bin/codecept --coverage-clover build/logs/clover.xml;
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
