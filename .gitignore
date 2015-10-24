@@ -7,3 +7,4 @@ Homestead.json
 
 tests/_output/*
 storage/database.sqlite
+storage/database.sqlite-journal

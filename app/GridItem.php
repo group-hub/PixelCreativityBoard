@@ -18,7 +18,7 @@ class GridItem extends Model
 	 *
 	 * @var bool
 	 */
-	protected $timestamps = false;
+	public $timestamps = false;
 
 	protected $dates = [
 		'expires_at'
