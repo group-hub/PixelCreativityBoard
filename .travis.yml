@@ -10,3 +10,11 @@ sudo: false
 
 install:
   - travis_retry composer install --no-interaction --no-scripts --prefer-source
+
+script:
+  - touch storage/database.sqlite
+  - php artisan migrate:install
+  - php artisan migrate:seed
+  - php artisan migrate:refresh --seed --force
+  - vendor/bin/codecept run; fi
+  - vendor/bin/codecept --coverage-clover build/logs/clover.xml; fi
