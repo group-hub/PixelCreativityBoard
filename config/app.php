@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        PixelCreativityBoard\Providers\AppServiceProvider::class,
+        PixelCreativityBoard\Providers\AuthServiceProvider::class,
+        PixelCreativityBoard\Providers\EventServiceProvider::class,
+        PixelCreativityBoard\Providers\RouteServiceProvider::class,
 
     ],
 

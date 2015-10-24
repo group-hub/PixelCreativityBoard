@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace PixelCreativityBoard\Http\Controllers;
 
-use App\GridItem;
+use PixelCreativityBoard\GridItem;
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use PixelCreativityBoard\Http\Requests;
+use PixelCreativityBoard\Http\Controllers\Controller;
 use Carbon\Carbon;
 
 class PageController extends Controller

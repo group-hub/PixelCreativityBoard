@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace PixelCreativityBoard\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        'PixelCreativityBoard\Model' => 'PixelCreativityBoard\Policies\ModelPolicy',
     ];
 
     /**
@@ -24,8 +24,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
-        parent::registerPolicies($gate);
-
         //
     }
 }
