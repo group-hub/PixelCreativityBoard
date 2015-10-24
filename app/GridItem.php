@@ -13,6 +13,13 @@ class GridItem extends Model
 	 */
 	protected $table = 'grid';
 
+	/**
+	 * Remove eloquent timestamps.
+	 *
+	 * @var bool
+	 */
+	protected $timestamps = false;
+
 	protected $dates = [
 		'expires_at'
 	];

@@ -18,7 +18,6 @@ class Grid extends Migration
             $table->smallInteger('y');
             $table->enum('color', ['red', 'green', 'blue', 'yellow'])->nullable();
             $table->timestamp('expires_at')->nullable();
-            $table->timestamps();
         });
     }
 
