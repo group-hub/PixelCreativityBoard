@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Grid extends Migration
+class Donations extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,13 @@ class Grid extends Migration
      */
     public function up()
     {
-        Schema::create('grid', function (Blueprint $table) {
+        Schema::create('donations', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('x');
-            $table->smallInteger('y');
-            $table->string('color')->nullable();
-            $table->timestamp('expires_at')->nullable();
+            $table->integer('just_giving_id');
+            $table->double('amount');
+            $table->string('name')->nullable();
+            $table->boolean('selected')->default(false);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class Grid extends Migration
      */
     public function down()
     {
-        Schema::drop('grid');
+        Schema::drop('donations');
     }
 }

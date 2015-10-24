@@ -14,7 +14,7 @@
                     @foreach($gridItems as $gridRow)
                         <tr class="row-{{ $gridRow[0]->y }}">
                             @foreach($gridRow as $gridItem)
-                               <td id="{{ $gridItem->x }}x{{ $gridItem->y }}" class="{{ $gridItem->color }}"></td>
+                                <td id="{{ $gridItem->x }}x{{ $gridItem->y }}" @if ($gridItem->color != null) style="background-color: #{{ $gridItem->color }}" @endif @if($gridItem->color != null)class="disabled"@endif></td>
                             @endforeach
                         </tr>
                     @endforeach

@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'PageController@index');
+
+Route::get('/donated', 'PageController@donated');

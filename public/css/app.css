@@ -35,6 +35,19 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.color-selector {
+  box-sizing: border-box;
+  padding: 5px; }
+  .color-selector .color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: middle; }
+    .color-selector .color.selected, .color-selector .color:hover {
+      height: 40px;
+      width: 40px; }
+
 html, body {
   height: 100%; }
 
@@ -72,7 +85,7 @@ body {
     .grid td.red {
       background-color: #FF0000; }
 
-.donate-button {
+.donate-button, .save-button {
   display: block;
   width: 800px;
   box-sizing: border-box;
@@ -80,8 +93,14 @@ body {
   background-color: #2980b9;
   color: white;
   text-decoration: none;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  cursor: pointer;
+  margin-bottom: 10px; }
+
+h1 {
+  font-size: 2em;
+  padding: 20px; }
 
 /*# sourceMappingURL=app.css.map */

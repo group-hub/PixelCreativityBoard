@@ -1,0 +1,17 @@
+.color-selector {
+	box-sizing: border-box;
+	padding: 5px;
+	
+	.color {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		vertical-align: middle;
+
+		&.selected, &:hover {
+			height: 40px;
+			width: 40px;
+		}
+	}
+}

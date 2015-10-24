@@ -1,5 +1,6 @@
 @import "partials/reset";
 @import "constants/colors";
+@import "partials/color-selector";
 
 html, body {
 	height: 100%;
@@ -29,7 +30,7 @@ body {
 	@import "partials/grid";
 }
 
-.donate-button {
+.donate-button, .save-button {
 	display: block;
 	width: 800px;
 	box-sizing: border-box;
@@ -37,7 +38,14 @@ body {
 	background-color: #2980b9;
 	color: white;
 	text-decoration: none;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+h1 {
+	font-size: 2em;
+	padding: 20px;
 }
