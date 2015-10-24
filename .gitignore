@@ -6,3 +6,4 @@ Homestead.json
 .idea
 
 tests/_output/*
+storage/database.sqlite

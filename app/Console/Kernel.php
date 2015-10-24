@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \PixelCreativityBoard\Console\Commands\Inspire::class,
+        \PixelCreativityBoard\Console\Commands\FunctionalTests::class
     ];
 
     /**
