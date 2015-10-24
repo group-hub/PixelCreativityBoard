@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use PixelCreativityBoard\Http\Requests;
 use PixelCreativityBoard\Http\Controllers\Controller;
 use Carbon\Carbon;
+use PixelCreativityBoard\JustGiving;
 
 class PageController extends Controller
 {
@@ -33,7 +34,7 @@ class PageController extends Controller
 
             $gridItems[] = $gridRow;
         }
-        return view('home')->with(['gridItems' => $gridItems]);
+        return view('home')->with(['gridItems' => $gridItems, 'justGivingUrl' => JustGiving::getDonationUrl()]);
     }
 
 }

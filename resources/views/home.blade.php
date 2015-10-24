@@ -20,6 +20,7 @@
                     @endforeach
                 </table>
             </div>
+            <a href="{{ $justGivingUrl }}" class="donate-button">Donate</a>
         </div>
     </body>
 </html>

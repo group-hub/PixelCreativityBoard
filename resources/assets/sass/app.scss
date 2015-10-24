@@ -28,3 +28,16 @@ body {
 
 	@import "partials/grid";
 }
+
+.donate-button {
+	display: block;
+	width: 800px;
+	box-sizing: border-box;
+	padding: 20px;
+	background-color: #2980b9;
+	color: white;
+	text-decoration: none;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
