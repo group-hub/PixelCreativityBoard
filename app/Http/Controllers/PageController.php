@@ -9,6 +9,7 @@ use PixelCreativityBoard\Http\Requests;
 use PixelCreativityBoard\Http\Controllers\Controller;
 use Carbon\Carbon;
 use PixelCreativityBoard\JustGiving;
+use Illuminate\Support\Facades\Log;
 
 class PageController extends Controller
 {
@@ -41,7 +42,7 @@ class PageController extends Controller
             $donationDetails = JustGiving::getDonationDetails($donationId);
 
             //If the donation is found and valid
-            if ($donationDetails != null && $donationDetails->pageShortName != JustGiving::$shortUrl) {
+            if ($donationDetails != null || $donationDetails->pageShortName == JustGiving::$shortUrl) {
 
                 $donation = null;
 
@@ -60,12 +61,43 @@ class PageController extends Controller
                 if ($donation->selected == false) {
                     $gridItems = GridItem::getGridItems();
                     $maxPixels = $donation->getMaxNumberOfPixels();
-                    return view('select')->with(['gridItems' => $gridItems, 'maxPixels' => $maxPixels]);
+                    return view('select')->with([
+                        'gridItems' => $gridItems,
+                        'maxPixels' => $maxPixels,
+                        'siteUrl' => env('SITE_URL'),
+                        'donationId' => $donation->just_giving_id
+                    ]);
                 }
             }
         }
 
         return redirect('/');
+    }
+
+    /**
+     * Save the selected pixels (using ajax)
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
+    public function save(Request $request)
+    {
+        //Get the donation
+        //$donation = Donation::where('just_giving_id', $request->donationId)->firstOrFail();
+
+        //Loop through all the selected pixels
+        foreach($request->all() as $pixel) {
+            //Do more complex checks!!!
+            //Check pixel not selected
+            $gridItem = GridItem::where('x', $pixel['x'])->where('y', $pixel['y'])->first();
+
+            $gridItem->color = $pixel['color'];
+            $gridItem->expires_at = Carbon::now()->addDays(7);
+            $gridItem->save();
+        }
+
+        return response("SUCCESS", 200);
     }
 
 }

@@ -17,7 +17,6 @@ class Kernel extends HttpKernel
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \PixelCreativityBoard\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -26,8 +25,5 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \PixelCreativityBoard\Http\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \PixelCreativityBoard\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }

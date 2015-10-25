@@ -51,7 +51,30 @@ $(document).ready(function () {
      * Save the pixels
      */
     $('.save-button').click(function() {
-        
+        var pixels= [];
+        $('.user-specified').each(function() {
+            var coordinates = $(this).attr('id');
+            var pixel = {
+                color: $(this).css('background-color'),
+                x: coordinates.substr(0, coordinates.indexOf('x')),
+                y: coordinates.substr(coordinates.indexOf('x')+1, coordinates.length)
+            };
+            pixels.push(pixel);
+        });
+
+        //Save using ajax
+        $.ajax(saveUrl, {
+            data: JSON.stringify(pixels),
+            contentType: 'application/json',
+            type: 'POST'
+        }).done(function() {
+            //Redirect back home
+            $(location).attr('href', siteUrl);
+        }).fail(function() {
+            alert("Something's gone wrong. Please try again");
+            $(location).reload();
+        });
+
     });
 });
 //# sourceMappingURL=all.js.map

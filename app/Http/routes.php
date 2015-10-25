@@ -14,3 +14,5 @@
 Route::get('/', 'PageController@index');
 
 Route::get('/donated', 'PageController@donated');
+
+Route::post('/save/{donationId}', 'PageController@save');

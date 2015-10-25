@@ -14,7 +14,7 @@
             @foreach($gridItems as $gridRow)
                 <tr class="row-{{ $gridRow[0]->y }}">
                     @foreach($gridRow as $gridItem)
-                        <td id="{{ $gridItem->x }}x{{ $gridItem->y }}" @if ($gridItem->color != null) style="background-color: #{{ $gridItem->color }}" class="disabled"@endif></td>
+                        <td id="{{ $gridItem->x }}x{{ $gridItem->y }}" @if ($gridItem->color != null) style="background-color: {{ $gridItem->color }}" class="disabled"@endif></td>
                     @endforeach
                 </tr>
             @endforeach
@@ -51,6 +51,10 @@
     <div class="save-button">Save</div>
 </div>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    var saveUrl = "{{ $siteUrl }}/save/{{ $donationId }}";
+    var siteUrl = "{{ $siteUrl }}";
+</script>
 <script src="/js/all.js"></script>
 </body>
 </html>
