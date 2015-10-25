@@ -11,14 +11,14 @@ class FunctionalTests extends Command
      *
      * @var string
      */
-    protected $signature = 'functional-tests';
+    protected $signature = 'tests';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Run the codeception functional tests.';
+    protected $description = 'Run the codeception tests.';
 
     /**
      * Create a new command instance.

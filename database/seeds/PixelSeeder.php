@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class GridSeeder extends Seeder
+class PixelSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class GridSeeder extends Seeder
         //Create all the grid squares in the database
         for ($y = 0; $y < env('GRID_MAX_Y', 60); $y++) {
             for ($x = 0; $x < env('GRID_MAX_X', 80); $x++) {
-                DB::table('grid')->insert([
+                DB::table('pixels')->insert([
                     'x' => $x,
                     'y' => $y,
                     'color' => null,

@@ -3,13 +3,14 @@
 namespace PixelCreativityBoard\Http\Controllers;
 
 use PixelCreativityBoard\Donation;
-use PixelCreativityBoard\GridItem;
+use PixelCreativityBoard\Pixel;
 use Illuminate\Http\Request;
 use PixelCreativityBoard\Http\Requests;
 use PixelCreativityBoard\Http\Controllers\Controller;
 use Carbon\Carbon;
 use PixelCreativityBoard\JustGiving;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 class PageController extends Controller
 {
@@ -22,8 +23,8 @@ class PageController extends Controller
      */
     public function index(Request $request)
     {
-        $gridItems = GridItem::getGridItems();
-        return view('home')->with(['gridItems' => $gridItems, 'justGivingUrl' => JustGiving::getDonationUrl()]);
+        $pixels = Pixel::getPixels();
+        return view('home')->with(['pixels' => $pixels, 'justGivingUrl' => JustGiving::getDonationUrl()]);
     }
 
     /**
@@ -59,7 +60,7 @@ class PageController extends Controller
 
                 //If the donation is still valid
                 if ($donation->selected == false) {
-                    $gridItems = GridItem::getGridItems();
+                    $gridItems = Pixel::getPixels();
                     $maxPixels = $donation->getMaxNumberOfPixels();
                     return view('select')->with([
                         'gridItems' => $gridItems,
@@ -84,18 +85,26 @@ class PageController extends Controller
     public function save(Request $request)
     {
         //Get the donation
-        //$donation = Donation::where('just_giving_id', $request->donationId)->firstOrFail();
+        $donation = Donation::donationWithJustGivingId($request->route('donationId'));
 
         //Loop through all the selected pixels
         foreach($request->all() as $pixel) {
-            //Do more complex checks!!!
-            //Check pixel not selected
+
             $gridItem = GridItem::where('x', $pixel['x'])->where('y', $pixel['y'])->first();
 
+            //Check the pixel has not already been selected
+            if ($gridItem->color != null) {
+                throw new ConflictHttpException;
+            }
+
             $gridItem->color = $pixel['color'];
-            $gridItem->expires_at = Carbon::now()->addDays(7);
+            $gridItem->expires_at = Carbon::now()->addDays(env('NUM_DAYS', 7));
             $gridItem->save();
         }
+
+        //Prevent duplicate selections
+        $donation->selected = true;
+        $donation->save();
 
         return response("SUCCESS", 200);
     }

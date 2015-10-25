@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Grid extends Migration
+class Pixel extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class Grid extends Migration
      */
     public function up()
     {
-        Schema::create('grid', function (Blueprint $table) {
+        Schema::create('pixels', function (Blueprint $table) {
             $table->increments('id');
             $table->smallInteger('x');
             $table->smallInteger('y');
@@ -28,6 +28,6 @@ class Grid extends Migration
      */
     public function down()
     {
-        Schema::drop('grid');
+        Schema::drop('pixels');
     }
 }

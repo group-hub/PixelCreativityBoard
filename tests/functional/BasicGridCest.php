@@ -1,6 +1,6 @@
 <?php
 
-use PixelCreativityBoard\GridItem;
+use PixelCreativityBoard\Pixel;
 use Carbon\Carbon;
 
 class BasicGridCest
@@ -13,11 +13,11 @@ class BasicGridCest
      */
     public function testDatabaseSeeded(FunctionalTester $I)
     {
-        //Calculate how many grid items should exist
-        $expectedNumGridItems = env('GRID_MAX_X') * env('GRID_MAX_Y');
+        //Calculate how many pixels should exist
+        $expectedNumPixels = env('GRID_MAX_X') * env('GRID_MAX_Y');
 
-        //Check all the grid items have been created
-        $I->seeNumRecords($expectedNumGridItems, 'grid');
+        //Check all the pixels have been created
+        $I->seeNumRecords($expectedNumPixels, 'pixels');
     }
 
     /**
@@ -32,26 +32,26 @@ class BasicGridCest
     }
 
     /**
-     * Test a grid item expires
+     * Test a pixel expires
      *
      * @param FunctionalTester $I
      */
     public function testGridExpires(FunctionalTester $I)
     {
         //Expires in the future
-        $gridItem = GridItem::findOrFail(1);
-        $gridItem->color = 'red';
-        $gridItem->expires_at = Carbon::now()->addDays(2);
-        $gridItem->save();
+        $pixel = Pixel::findOrFail(1);
+        $pixel->color = 'rgb(73, 134, 231)';
+        $pixel->expires_at = Carbon::now()->addDays(2);
+        $pixel->save();
         //The grid item shouldn't be removed
         $I->amOnPage('/');
-        $I->see('', ".red#0x0");
+        $I->see('', 'td[style*="background-color: rgb(73, 134, 231)"]');
 
         //Expires in the past
-        $gridItem->expires_at = Carbon::now()->subDay();
-        $gridItem->save();
+        $pixel->expires_at = Carbon::now()->subDay();
+        $pixel->save();
         //The grid item should be removed
         $I->amOnPage('/');
-        $I->dontSee('', ".red#0x0");
+        $I->dontSee('', 'td[style*="background-color: rgb(73, 134, 231)"]');
     }
 }

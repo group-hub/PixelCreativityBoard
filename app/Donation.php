@@ -3,6 +3,7 @@
 namespace PixelCreativityBoard;
 
 use Illuminate\Database\Eloquent\Model;
+use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 
 class Donation extends Model
 {
@@ -16,6 +17,16 @@ class Donation extends Model
 	protected $dates = [
 		'date'
 	];
+
+	/**
+	 * Returns the donation with JustGiving id
+	 *
+	 * @param $donationId
+	 */
+	public static function donationWithJustGivingId($donationId)
+	{
+		return Donation::where('just_giving_id', $donationId)->firstOrFail();
+	}
 
 	/**
 	 * Returns the maximum number of pixels
