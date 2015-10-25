@@ -62,6 +62,8 @@ $(document).ready(function () {
             pixels.push(pixel);
         });
 
+        console.log(pixels);
+
         //Save using ajax
         $.ajax(saveUrl, {
             data: JSON.stringify(pixels),
@@ -72,7 +74,7 @@ $(document).ready(function () {
             $(location).attr('href', siteUrl);
         }).fail(function() {
             alert("Something's gone wrong. Please try again");
-            $(location).reload();
+            location.reload();
         });
 
     });

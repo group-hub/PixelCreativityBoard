@@ -12,13 +12,16 @@ class PixelDonation extends Migration
      */
     public function up()
     {
-        Schema::create('pixel_donation', function (Blueprint $table) {
+        Schema::create('pixel_donations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('just_giving_id');
-            $table->double('amount');
-            $table->string('name')->nullable();
-            $table->boolean('selected')->default(false);
-            $table->timestamps();
+            $table->integer('pixel_id')->unsigned();
+            $table->integer('donation_id')->unsigned();
+            $table->string('color');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
+
+            $table->foreign('pixel_id')->references('id')->on('pixels');
+            $table->foreign('donation_id')->references('id')->on('donations');
         });
     }
 
@@ -29,6 +32,10 @@ class PixelDonation extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('pixel_donations', function (Blueprint $table) {
+            $table->dropForeign('pixel_donations_pixel_id_foreign');
+            $table->dropForeign('pixel_donations_donation_id_foreign');
+        });
+        Schema::drop('pixel_donations');
     }
 }

@@ -11,10 +11,10 @@
     <h1>Selected <span id="selected-pixels">0</span> of <span id="max-pixels">{{ $maxPixels }}</span> pixels</h1>
     <div class="grid">
         <table>
-            @foreach($gridItems as $gridRow)
+            @foreach($pixels as $gridRow)
                 <tr class="row-{{ $gridRow[0]->y }}">
-                    @foreach($gridRow as $gridItem)
-                        <td id="{{ $gridItem->x }}x{{ $gridItem->y }}" @if ($gridItem->color != null) style="background-color: {{ $gridItem->color }}" class="disabled"@endif></td>
+                    @foreach($gridRow as $pixel)
+                        <td id="{{ $pixel->x }}x{{ $pixel->y }}" @if ($pixel->color != null) style="background-color: {{ $pixel->color }}" class="disabled"@endif></td>
                     @endforeach
                 </tr>
             @endforeach

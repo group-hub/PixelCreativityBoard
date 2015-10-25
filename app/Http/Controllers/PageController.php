@@ -10,6 +10,7 @@ use PixelCreativityBoard\Http\Controllers\Controller;
 use Carbon\Carbon;
 use PixelCreativityBoard\JustGiving;
 use Illuminate\Support\Facades\Log;
+use PixelCreativityBoard\PixelDonation;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 class PageController extends Controller
@@ -60,10 +61,10 @@ class PageController extends Controller
 
                 //If the donation is still valid
                 if ($donation->selected == false) {
-                    $gridItems = Pixel::getPixels();
+                    $pixels = Pixel::getPixels();
                     $maxPixels = $donation->getMaxNumberOfPixels();
                     return view('select')->with([
-                        'gridItems' => $gridItems,
+                        'pixels' => $pixels,
                         'maxPixels' => $maxPixels,
                         'siteUrl' => env('SITE_URL'),
                         'donationId' => $donation->just_giving_id
@@ -87,19 +88,33 @@ class PageController extends Controller
         //Get the donation
         $donation = Donation::donationWithJustGivingId($request->route('donationId'));
 
+        //If the user has already selected their pixels
+        if ($donation->selected) {
+            return redirect('/');
+        }
+
         //Loop through all the selected pixels
         foreach($request->all() as $pixel) {
 
-            $gridItem = GridItem::where('x', $pixel['x'])->where('y', $pixel['y'])->first();
+            $savedPixel = Pixel::where('x', $pixel['x'])->where('y', $pixel['y'])->first();
 
             //Check the pixel has not already been selected
-            if ($gridItem->color != null) {
+            if ($savedPixel->color != null) {
                 throw new ConflictHttpException;
             }
 
-            $gridItem->color = $pixel['color'];
-            $gridItem->expires_at = Carbon::now()->addDays(env('NUM_DAYS', 7));
-            $gridItem->save();
+            $savedPixel->color = $pixel['color'];
+            $savedPixel->expires_at = Carbon::now()->addDays(env('NUM_DAYS', 7));
+            $savedPixel->save();
+
+            //Save the pixel donation
+            $pixelDonation = new PixelDonation();
+            $pixelDonation->pixel_id = $savedPixel->id;
+            $pixelDonation->donation_id = $donation->id;
+            $pixelDonation->color = $savedPixel->color;
+            $pixelDonation->start_time = Carbon::now();
+            $pixelDonation->end_time = $savedPixel->expires_at;
+            $pixelDonation->save();
         }
 
         //Prevent duplicate selections
