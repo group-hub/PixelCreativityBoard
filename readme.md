@@ -1,6 +1,6 @@
 # Pixel Creativity Board
 
-[![Build Status](https://travis-ci.org/group-hub-uk/PixelCreativityBoard.svg?branch=master)](https://travis-ci.org/group-hub-uk/PixelCreativityBoard)
+[![Build Status](https://travis-ci.org/group-hub/PixelCreativityBoard.svg?branch=master)](https://travis-ci.org/group-hub/PixelCreativityBoard)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/group-hub-uk/PixelCreativityBoard/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/group-hub-uk/PixelCreativityBoard/?branch=master)
 [![codecov.io](https://codecov.io/github/group-hub-uk/PixelCreativityBoard/coverage.svg?branch=master)](https://codecov.io/github/group-hub-uk/PixelCreativityBoard?branch=master)
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
