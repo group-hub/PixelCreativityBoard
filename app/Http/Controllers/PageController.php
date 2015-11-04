@@ -44,7 +44,7 @@ class PageController extends Controller
             $donationDetails = JustGiving::getDonationDetails($donationId);
 
             //If the donation is found and valid
-            if ($donationDetails != null || $donationDetails->pageShortName == JustGiving::$shortUrl) {
+            if ($donationDetails != null && $donationDetails->pageShortName == JustGiving::$shortUrl) {
 
                 $donation = null;
 
