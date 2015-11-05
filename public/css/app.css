@@ -52,12 +52,31 @@ html, body {
   height: 100%; }
 
 body {
-  margin: 0;
   padding: 0;
   width: 100%;
   display: table;
-  font-weight: 100;
-  font-family: 'Lato'; }
+  font-weight: 400;
+  font-family: 'Lato';
+  background-color: #f8f8f8;
+  margin-top: 85px; }
+
+header {
+  width: 100%;
+  height: 68px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12); }
+  header .eap-logo {
+    float: right; }
+    header .eap-logo img {
+      margin-top: 5px;
+      height: 60px; }
+
+.page-container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .container {
   text-align: center;
@@ -78,29 +97,40 @@ body {
     height: 10px;
     border: 1px solid #555;
     box-sizing: border-box; }
-    .grid td.green {
-      background-color: #00FF00; }
-    .grid td.blue {
-      background-color: #0000FF; }
-    .grid td.red {
-      background-color: #FF0000; }
 
 .donate-button, .save-button {
   display: block;
   width: 800px;
   box-sizing: border-box;
-  padding: 20px;
-  background-color: #2980b9;
+  padding: 15px;
+  background-color: #ff7c00;
   color: white;
+  font-size: 20px;
+  text-transform: uppercase;
   text-decoration: none;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-  margin-bottom: 10px; }
+  margin-bottom: 20px;
+  transition: all 0.2s linear; }
+  .donate-button:hover, .save-button:hover {
+    background-color: #ff9129; }
+  .donate-button:active, .save-button:active {
+    background-color: #ffa652; }
 
 h1 {
   font-size: 2em;
   padding: 20px; }
+
+.main-contents {
+  background-color: white;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px; }
+  .main-contents p {
+    font-size: 14px;
+    text-align: left; }
 
 /*# sourceMappingURL=app.css.map */

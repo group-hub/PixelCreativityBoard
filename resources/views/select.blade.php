@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Pixel Creativity Board</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
+@include ('partials/_head')
 <div class="container">
     <h1>Selected <span id="selected-pixels">0</span> of <span id="max-pixels">{{ $maxPixels }}</span> pixels</h1>
     <div class="grid">
