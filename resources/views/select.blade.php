@@ -48,6 +48,11 @@
             <option value="#a47ae2">#a47ae2</option>
         </select>
     </div>
+    <select>
+        @foreach($fundraisers as $fundraiser)
+            <option value="{{ $fundraiser->id }}">{{ $fundraiser->name }}</option>
+        @endforeach
+    </select>
     <div class="save-button">Save</div>
 </div>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

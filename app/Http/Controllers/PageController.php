@@ -3,6 +3,7 @@
 namespace PixelCreativityBoard\Http\Controllers;
 
 use PixelCreativityBoard\Donation;
+use PixelCreativityBoard\Fundraiser;
 use PixelCreativityBoard\Pixel;
 use Illuminate\Http\Request;
 use PixelCreativityBoard\Http\Requests;
@@ -63,11 +64,16 @@ class PageController extends Controller
                 if ($donation->selected == false) {
                     $pixels = Pixel::getPixels();
                     $maxPixels = $donation->getMaxNumberOfPixels();
+
+                    //Get all the fundraisers
+                    $fundraisers = Fundraiser::getAllFundraisers();
+
                     return view('select')->with([
                         'pixels' => $pixels,
                         'maxPixels' => $maxPixels,
                         'siteUrl' => env('SITE_URL'),
-                        'donationId' => $donation->just_giving_id
+                        'donationId' => $donation->just_giving_id,
+                        'fundraisers' => $fundraisers
                     ]);
                 }
             }
@@ -93,8 +99,12 @@ class PageController extends Controller
             return redirect('/');
         }
 
+        //Save the fundraiser
+        $donation->fundraiser_id = $request->get('fundraiser');
+        $donation->save();
+
         //Loop through all the selected pixels
-        foreach($request->all() as $pixel) {
+        foreach($request->get('pixels') as $pixel) {
 
             $savedPixel = Pixel::where('x', $pixel['x'])->where('y', $pixel['y'])->first();
 

@@ -62,11 +62,17 @@ $(document).ready(function () {
             pixels.push(pixel);
         });
 
-        console.log(pixels);
+        var data = {
+            //Get the fundraiser
+            fundraiser: 1,
+            pixels: pixels
+        };
+
+        console.log(data);
 
         //Save using ajax
         $.ajax(saveUrl, {
-            data: JSON.stringify(pixels),
+            data: JSON.stringify(data),
             contentType: 'application/json',
             type: 'POST'
         }).done(function() {
