@@ -2,6 +2,7 @@ var colorPicker = '';
 var colorSelected = 'f83a22';
 var maxPixels = 0;
 var selectedPixels = 0;
+var fundraiser = 0;
 
 $(document).ready(function () {
     /**
@@ -48,6 +49,19 @@ $(document).ready(function () {
     });
 
     /**
+     * Select fundraiser
+     */
+    $('.select-fundraiser li').click(function() {
+       $('.select-fundraiser li').each(function() {
+          $(this).removeClass('selected');
+       });
+
+        //Set the selected fundraiser
+        fundraiser = $(this).attr('id');
+        $(this).addClass('selected');
+    });
+
+    /**
      * Save the pixels
      */
     $('.save-button').click(function() {
@@ -64,7 +78,7 @@ $(document).ready(function () {
 
         var data = {
             //Get the fundraiser
-            fundraiser: 1,
+            fundraiser: fundraiser,
             pixels: pixels
         };
 

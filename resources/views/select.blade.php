@@ -16,6 +16,7 @@
         </div>
         <div class="color-selector" style="display: none">
             <select>
+                <option value="#ffffff">#ffffff</option>
                 <option value="#ac725e">#ac725e</option>
                 <option value="#d06b64">#d06b64</option>
                 <option value="#f83a22">#f83a22</option>
@@ -42,12 +43,24 @@
                 <option value="#a47ae2">#a47ae2</option>
             </select>
         </div>
-        <select>
-            @foreach($fundraisers as $fundraiser)
-                <option value="{{ $fundraiser->id }}">{{ $fundraiser->name }}</option>
-            @endforeach
-        </select>
+
+        <div class="page-container main-contents fundraiser-container select-fundraiser">
+            <h4>Optionally select a fundraiser</h4>
+            <ul>
+                <li id="0" class="whole-team selected">
+                    <p>Donate to Pixtivity Creators</p>
+                </li>
+                @foreach($fundraisers as $fundraiser)
+                    <li id="{{ $fundraiser->id }}">
+                        <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
+                        <p>{{ $fundraiser->name }}</p>
+                    </li>
+                @endforeach
+            </ul>
+            <div class="clear-fix"></div>
+        </div>
         <div class="save-button">Save</div>
+        <a href="#" class="instructions-button">Instructions</a>
     </div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>

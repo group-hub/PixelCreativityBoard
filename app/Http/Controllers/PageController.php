@@ -26,7 +26,8 @@ class PageController extends Controller
     public function index(Request $request)
     {
         $pixels = Pixel::getPixels();
-        return view('home')->with(['pixels' => $pixels, 'justGivingUrl' => JustGiving::getDonationUrl()]);
+        $percentageRaised = Donation::getPercentageRaised();
+        return view('home')->with(['pixels' => $pixels, 'percentageRaised' => $percentageRaised, 'justGivingUrl' => JustGiving::getDonationUrl()]);
     }
 
     /**

@@ -29,6 +29,20 @@ class Donation extends Model
 	}
 
 	/**
+	 * Returns the percentage of the total amount raised
+	 */
+	public static function getPercentageRaised()
+	{
+		$totalAmountRaised = 0;
+		$allDonations = Donation::all();
+		foreach ($allDonations as $donation) {
+			$totalAmountRaised += $donation->amount;
+		}
+
+		return ($totalAmountRaised / env('TOTAL_AMOUNT', 5000)) * 100;
+	}
+
+	/**
 	 * Returns the maximum number of pixels
 	 *
 	 * @return float

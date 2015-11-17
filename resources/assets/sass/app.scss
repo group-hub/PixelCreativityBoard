@@ -32,6 +32,15 @@ header {
 	-moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
 	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
 
+	.logo {
+		float: left;
+
+		img {
+			height: 45px;
+			margin-top: 12px;
+		}
+	}
+
 	.eap-logo {
 		float: right;
 
@@ -104,8 +113,8 @@ header {
 }
 
 h2 {
-	margin-bottom: 20px;
-	margin-top: 5px;
+	margin-bottom: 35px;
+	margin-top: 10px;
 	font-size: 24px;
 }
 
@@ -116,7 +125,6 @@ h2 {
 	}
 
 	li {
-		height: 135px;
 		width: 20%;
 		box-sizing: border-box;
 		padding: 10px;
@@ -177,7 +185,6 @@ h2 {
 	box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12);
 
 	.amount-raised {
-		width: 30%;
 		height: 40px;
 		background-color: $orange-color;
 	}
@@ -190,15 +197,66 @@ h1 {
 
 .main-contents {
 	background-color: white;
-	-webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12);
-	-moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12);
-	box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12);
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	padding: 20px;
 	margin-bottom: 20px;
 
 	p {
 		font-size: 14px;
+		line-height: 20px;
 		text-align: left;
+		margin-bottom: 20px;
+
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+
+footer {
+	width: 100%;
+
+	a {
+		display: inline-block;
+
+		img {
+			height: 50px;
+		}
+	}
+}
+
+.select-fundraiser {
+	h4 {
+		margin-bottom: 20px;
+		font-size: 20px;
+	}
+
+	li {
+		cursor: pointer;
+		padding: 10px;
+		width: 15%;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		margin-bottom: 10px;
+
+		&.selected {
+			background-color: $background-color;
+			-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.20);
+			-moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.20);
+			box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.20);
+		}
+
+		&.whole-team {
+			float: none;
+			width: 100%;
+			clear: both;
+			height: inherit;
+			box-sizing: border-box;
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 }

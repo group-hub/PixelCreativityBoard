@@ -37,7 +37,9 @@ table {
 
 .color-selector {
   box-sizing: border-box;
-  padding: 5px; }
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 30px; }
   .color-selector .color {
     display: inline-block;
     width: 20px;
@@ -71,6 +73,11 @@ header {
   position: fixed;
   top: 0;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12); }
+  header .logo {
+    float: left; }
+    header .logo img {
+      height: 45px;
+      margin-top: 12px; }
   header .eap-logo {
     float: right; }
     header .eap-logo img {
@@ -133,15 +140,14 @@ header {
     background-color: #9dbf64; }
 
 h2 {
-  margin-bottom: 20px;
-  margin-top: 5px;
+  margin-bottom: 35px;
+  margin-top: 10px;
   font-size: 24px; }
 
 .fundraiser-container ul {
   width: 100%; }
 
 .fundraiser-container li {
-  height: 135px;
   width: 20%;
   box-sizing: border-box;
   padding: 10px;
@@ -181,7 +187,6 @@ h2 {
   background-color: #f8f8f8;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12); }
   .target .amount-raised {
-    width: 30%;
     height: 40px;
     background-color: #ff7c00; }
 
@@ -197,6 +202,40 @@ h1 {
   margin-bottom: 20px; }
   .main-contents p {
     font-size: 14px;
-    text-align: left; }
+    line-height: 20px;
+    text-align: left;
+    margin-bottom: 20px; }
+    .main-contents p:last-child {
+      margin-bottom: 0px; }
+
+footer {
+  width: 100%; }
+  footer a {
+    display: inline-block; }
+    footer a img {
+      height: 50px; }
+
+.select-fundraiser h4 {
+  margin-bottom: 20px;
+  font-size: 20px; }
+
+.select-fundraiser li {
+  cursor: pointer;
+  padding: 10px;
+  width: 15%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 10px; }
+  .select-fundraiser li.selected {
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2); }
+  .select-fundraiser li.whole-team {
+    float: none;
+    width: 100%;
+    clear: both;
+    height: inherit;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0; }
 
 /*# sourceMappingURL=app.css.map */
