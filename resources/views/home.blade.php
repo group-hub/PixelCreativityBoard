@@ -61,7 +61,7 @@
             <p>But there is a catch. For a giving amount of time, a couple of neglected coloured squares will turn back to black. We added this to represent that childhood is nurtured, many children have their childhood cut short for all sorts of horrible reasons. Just give them some attention and colour the squares in!</p>
         </div>
         <div class="page-container main-contents">
-            <h2>About the Charity</h2>
+            <h2>About the charity</h2>
             <p>East African Playgrounds aims to enhance the lives of children across Uganda by developing children’s learning opportunities, creativity and environments through building playgrounds and running arts and play sessions. These playgrounds enable the children to make the most of their childhood by developing their social, mental and physical selves through play. We provide arts and play programs to emphasize the importance of play and help the children develop.</p>
             <p>Our objectives are to train young men and women across East Africa to become professional builders and welders; to then use their new skills to build high quality playgrounds across East Africa. In doing this we aim to provide high quality training and employment through our playground building workshops. Uganda has a high youth unemployment rate, with 62% of has one of the world’s youngest population (78% being under 30). By constructing our playgrounds using local material and our teams of locally trained playground builders we are able to increase the impact we have on development in Uganda. The volunteers from our projects aren’t there to replace staff, these volunteers help with the building of the playground but also so we can train and employ more local staff.</p>
         </div>
@@ -92,24 +92,26 @@
             <div class="clear-fix"></div>
         </div>
         <div class="page-container main-contents">
-            <h2>Photo Gallery</h2>
-        </div>
-        <div class="page-container main-contents">
-            <h2>Team Donation Target</h2>
+            <h2>Team donation target</h2>
             <div class="target">
                 <div class="amount-raised" style="width: {{ $percentageRaised }}%"></div>
             </div>
         </div>
-        <footer>
-            <h2>Pixtivity is supported by:</h2>
-            <a href="http://uu-u.uk/">
-                <img src="/images/uu-u-logo.png" alt="uu-u design" />
-            </a>
-            <a href="https://www.grouphub.co">
-                <img src="/images/group-hub-logo.png" alt="Group Hub" />
-            </a>
-            <div class="clear-fix"></div>
-        </footer>
+        <div class="page-container main-contents">
+            <h2>Photo Gallery</h2>
+        </div>
+        <div class="page-container main-contents">
+            <footer>
+                <h2>Pixtivity is supported by</h2>
+                <a href="http://uu-u.uk/">
+                    <img src="/images/uu-u-logo.png" alt="uu-u design" />
+                </a>
+                <a href="https://www.grouphub.co">
+                    <img src="/images/group-hub-logo.png" alt="Group Hub" />
+                </a>
+                <div class="clear-fix"></div>
+            </footer>
+        </div>
     </div>
 
 @include ('partials/_foot')

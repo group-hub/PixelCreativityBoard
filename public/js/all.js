@@ -82,8 +82,6 @@ $(document).ready(function () {
             pixels: pixels
         };
 
-        console.log(data);
-
         //Save using ajax
         $.ajax(saveUrl, {
             data: JSON.stringify(data),

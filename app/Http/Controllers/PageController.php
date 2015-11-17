@@ -101,8 +101,11 @@ class PageController extends Controller
         }
 
         //Save the fundraiser
-        $donation->fundraiser_id = $request->get('fundraiser');
-        $donation->save();
+        $fundraiser = $request->get('fundraiser');
+        if ($fundraiser != 0) {
+            $donation->fundraiser_id = $fundraiser;
+            $donation->save();
+        }
 
         //Loop through all the selected pixels
         foreach($request->get('pixels') as $pixel) {

@@ -1,3 +1,4 @@
+<noscript>Pixtivity will not work without javascript</noscript>
 <header>
     <div class="page-container">
         <a href="#" class="logo">

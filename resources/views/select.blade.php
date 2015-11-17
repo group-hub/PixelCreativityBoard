@@ -45,7 +45,7 @@
         </div>
 
         <div class="page-container main-contents fundraiser-container select-fundraiser">
-            <h4>Optionally select a fundraiser</h4>
+            <h4>Select a Fundraiser</h4>
             <ul>
                 <li id="0" class="whole-team selected">
                     <p>Donate to Pixtivity Creators</p>
