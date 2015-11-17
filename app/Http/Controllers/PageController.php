@@ -118,7 +118,8 @@ class PageController extends Controller
             }
 
             $savedPixel->color = $pixel['color'];
-            $savedPixel->expires_at = Carbon::now()->addDays(env('NUM_DAYS', 7));
+            $randomExpiryDate = rand(env('MIN_NUM_HOURS', 100), env('MAX_NUM_HOURS', 150));
+            $savedPixel->expires_at = Carbon::now()->addHours($randomExpiryDate);
             $savedPixel->save();
 
             //Save the pixel donation
