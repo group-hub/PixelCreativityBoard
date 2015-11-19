@@ -21,7 +21,7 @@
             <ul>
                 @foreach($fundraisers as $fundraiser)
                     <li>
-                        <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
+                        <img src="{{ $fundraiser->image }}" alt="{{ $fundraiser->name }}" />
                         <p>{{ $fundraiser->name }}</p>
                     </li>
                 @endforeach
