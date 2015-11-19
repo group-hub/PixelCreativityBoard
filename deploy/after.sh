@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash /home/ubuntu/scripts/before-install.sh
+bash /home/ubuntu/scripts/after-install.sh
