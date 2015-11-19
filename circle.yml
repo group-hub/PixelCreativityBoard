@@ -2,6 +2,10 @@ machine:
   php:
     version: 5.6.5
 test:
+  pre:
+    - touch storage/database.sqlite
+    - php artisan migrate:install
+    - php artisan migrate:refresh --seed --force
   override:
     - vendor/bin/codecept run
 deployment:
