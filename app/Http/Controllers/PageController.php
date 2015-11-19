@@ -27,7 +27,16 @@ class PageController extends Controller
     {
         $pixels = Pixel::getPixels();
         $percentageRaised = Donation::getPercentageRaised();
-        return view('home')->with(['pixels' => $pixels, 'percentageRaised' => $percentageRaised, 'justGivingUrl' => JustGiving::getDonationUrl()]);
+
+        //Get all the fundraisers
+        $fundraisers = Fundraiser::getAllFundraisers();
+
+        return view('home')->with([
+            'pixels' => $pixels,
+            'percentageRaised' => $percentageRaised,
+            'justGivingUrl' => JustGiving::getDonationUrl(),
+            'fundraisers' => $fundraisers
+        ]);
     }
 
     /**

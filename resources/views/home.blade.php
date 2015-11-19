@@ -19,38 +19,12 @@
         <div class="page-container main-contents fundraiser-container">
             <h2>University of Portsmouth Team 2015</h2>
             <ul>
-                <li>
-                    <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
-                    <p>Ming Wu</p>
-                </li>
-                <li>
-                    <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
-                    <p>Ming Wu</p>
-                </li>
-                <li>
-                    <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
-                    <p>Ming Wu</p>
-                </li>
-                <li>
-                    <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
-                    <p>Ming Wu</p>
-                </li>
-                <li>
-                    <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
-                    <p>Ming Wu</p>
-                </li>
-                <li>
-                    <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
-                    <p>Ming Wu</p>
-                </li>
-                <li>
-                    <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
-                    <p>Ming Wu</p>
-                </li>
-                <li>
-                    <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
-                    <p>Ming Wu</p>
-                </li>
+                @foreach($fundraisers as $fundraiser)
+                    <li>
+                        <img src="https://scontent-lhr3-1.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p320x320/12116001_890728967641152_4429159945721636821_n.jpg?oh=577d5d19fd841f2c6e53638290da583b&oe=56F92A1F" alt="Name" />
+                        <p>{{ $fundraiser->name }}</p>
+                    </li>
+                @endforeach
             </ul>
             <div class="clear-fix"></div>
         </div>
