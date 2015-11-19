@@ -12,7 +12,7 @@ deployment:
   staging:
     branch: master
     codedeploy:
-      nest:
+      pixtivity:
         application_root: /
         region: eu-west-1
         revision_location:
