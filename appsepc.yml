@@ -1,0 +1,9 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/temp
+hooks:
+  AfterInstall:
+    - location: deploy/after.sh
+      runas: root
