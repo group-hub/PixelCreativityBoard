@@ -41,6 +41,7 @@ class Pixel extends Model
 					if (Carbon::now()->timestamp > $pixel->expires_at->timestamp) {
 						$pixel->expires_at = null;
 						$pixel->color = null;
+						$pixel->name = null;
 						$pixel->save();
 					}
 				}

@@ -8,7 +8,7 @@
                 @foreach($pixels as $gridRow)
                     <tr class="row-{{ $gridRow[0]->y }}">
                         @foreach($gridRow as $pixel)
-                            <td id="{{ $pixel->x }}x{{ $pixel->y }}" @if ($pixel->color != null) style="background-color: {{ $pixel->color }}" class="disabled"@endif></td>
+                            <td id="{{ $pixel->x }}x{{ $pixel->y }}" @if ($pixel->color != null) style="background-color: {{ $pixel->color }}" class="disabled" title="{{ $pixel->name }}"@endif></td>
                         @endforeach
                     </tr>
                 @endforeach
@@ -87,5 +87,11 @@
             </footer>
         </div>
     </div>
-
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/js/jquery.tooltipster.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.grid td').tooltipster();
+        });
+    </script>
 @include ('partials/_foot')
