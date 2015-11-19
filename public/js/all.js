@@ -1,5 +1,5 @@
 var colorPicker = '';
-var colorSelected = 'f83a22';
+var colorSelected = '769641';
 var maxPixels = 0;
 var selectedPixels = 0;
 var fundraiser = 0;
