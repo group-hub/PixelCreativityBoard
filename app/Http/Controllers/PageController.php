@@ -146,6 +146,11 @@ class PageController extends Controller
         $donation->selected = true;
         $donation->save();
 
+        //Clear varnish
+        if (env('APP_ENV') == 'production') {
+            system('varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban "req.url == /"');
+        }
+
         return response("SUCCESS", 200);
     }
 
