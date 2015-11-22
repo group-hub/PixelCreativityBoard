@@ -263,6 +263,17 @@ h1 {
 	}
 }
 
+.picture {
+	figure {
+		display: inline-block;
+		padding: 10px;
+	}
+
+	#photo1 {
+		float: left;
+	}
+}
+
 footer {
 	width: 100%;
 	

@@ -273,6 +273,13 @@ h1 {
       .instructions .instructions-container .disclaimer span {
         text-decoration: underline; }
 
+.picture figure {
+  display: inline-block;
+  padding: 10px; }
+
+.picture #photo1 {
+  float: left; }
+
 footer {
   width: 100%; }
   footer h5 {
