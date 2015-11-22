@@ -52,7 +52,7 @@
             <div class="clear-fix"></div>
         </div>
         <div class="save-button">Save</div>
-        <a href="#" class="instructions-button">Instructions</a>
+        @include('partials/instructions')
     </div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>

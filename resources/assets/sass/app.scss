@@ -83,7 +83,7 @@ header {
 	@import "partials/grid";
 }
 
-.donate-button, .save-button, .instructions-button {
+.donate-button, .save-button {
 	display: block;
 	width: 800px;
 	box-sizing: border-box;
@@ -106,20 +106,6 @@ header {
 
 	&:active {
 		background-color: lighten($orange-color, 16);
-	}
-}
-
-.instructions-button {
-	background-color: $green-color;
-	font-size: 14px;
-	padding: 10px;
-
-	&:hover {
-		background-color: lighten($green-color, 8);
-	}
-
-	&:active {
-		background-color: lighten($green-color, 16);
 	}
 }
 
@@ -227,6 +213,56 @@ h1 {
 	}
 }
 
+.instructions {
+	padding: 0;
+	margin-top: 20px;
+
+	h2 {
+		background-color: $green-color;
+		font-size: 18px;
+		padding: 10px;
+		color: white;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+
+	.instructions-container {
+		padding: 20px;
+
+		h3:first-child {
+			margin-top: 20px;
+		}
+
+		h3 {
+			text-transform: uppercase;
+			font-weight: 900;
+			font-size: 16px;
+			color: $color-black;
+			margin-bottom: 10px;
+			margin-top: 40px;
+		}
+
+		p {
+			text-align: center;
+			margin: 10px 0;
+			color: $color-black;
+		}
+
+		.pixel-cost {
+			font-weight: bold;
+			text-decoration: underline;
+		}
+
+		.disclaimer {
+			margin-top: 40px;
+
+			span {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
 footer {
 	width: 100%;
 	
@@ -286,10 +322,6 @@ footer {
 			color: $green-color;
 		}
 	}
-}
-
-.open-source {
-
 }
 
 .select-fundraiser {

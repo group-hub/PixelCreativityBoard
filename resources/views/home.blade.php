@@ -14,8 +14,12 @@
                 @endforeach
             </table>
         </div>
+        @include ('partials/_instructions')
         <a href="{{ $justGivingUrl }}" class="donate-button">Donate</a>
-        <a href="#" class="instructions-button">Instructions</a>
+        <div class="page-container main-contents">
+            <h2>Why did we create Pixtivity?</h2>
+            <p>INSERT TEXT ABOUT PROJECT</p>
+        </div>
         <div class="page-container main-contents fundraiser-container">
             <h2>University of Portsmouth Team 2015-16</h2>
             <ul>
@@ -27,12 +31,6 @@
                 @endforeach
             </ul>
             <div class="clear-fix"></div>
-        </div>
-        <div class="page-container main-contents">
-            <h2>What is this?</h2>
-            <p>We created Pixtivity to make donating a fun and creative process. We encourage everyone to get imaginative together to create an ever evolving piece of art. You are also taking part in bringing joy to children all across East Africa, by funding playgrounds to be built in their school playgrounds.</p>
-            <p>There are 4800 squares. There are a minimum 4800 opportunities to support us.</p>
-            <p>But there is a catch. For a given amount of time, a couple of neglected coloured squares will turn back to black. We added this to represent that childhood is nurtured, many children have their childhood cut short for all sorts of horrible reasons. Just give them some attention and colour the squares in!</p>
         </div>
         <div class="page-container main-contents">
             <h2>About the charity</h2>

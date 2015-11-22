@@ -150,7 +150,7 @@ header {
     border: 1px solid #555;
     box-sizing: border-box; }
 
-.donate-button, .save-button, .instructions-button {
+.donate-button, .save-button {
   display: block;
   width: 800px;
   box-sizing: border-box;
@@ -166,19 +166,10 @@ header {
   cursor: pointer;
   margin-bottom: 20px;
   transition: all 0.2s linear; }
-  .donate-button:hover, .save-button:hover, .instructions-button:hover {
+  .donate-button:hover, .save-button:hover {
     background-color: #ff9129; }
-  .donate-button:active, .save-button:active, .instructions-button:active {
+  .donate-button:active, .save-button:active {
     background-color: #ffa652; }
-
-.instructions-button {
-  background-color: #74943D;
-  font-size: 14px;
-  padding: 10px; }
-  .instructions-button:hover {
-    background-color: #8bb149; }
-  .instructions-button:active {
-    background-color: #9dbf64; }
 
 h2 {
   margin-bottom: 35px;
@@ -248,6 +239,39 @@ h1 {
     margin-bottom: 20px; }
     .main-contents p:last-child {
       margin-bottom: 0px; }
+
+.instructions {
+  padding: 0;
+  margin-top: 20px; }
+  .instructions h2 {
+    background-color: #74943D;
+    font-size: 18px;
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 0; }
+  .instructions .instructions-container {
+    padding: 20px; }
+    .instructions .instructions-container h3:first-child {
+      margin-top: 20px; }
+    .instructions .instructions-container h3 {
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+      margin-top: 40px; }
+    .instructions .instructions-container p {
+      text-align: center;
+      margin: 10px 0;
+      color: #333; }
+    .instructions .instructions-container .pixel-cost {
+      font-weight: bold;
+      text-decoration: underline; }
+    .instructions .instructions-container .disclaimer {
+      margin-top: 40px; }
+      .instructions .instructions-container .disclaimer span {
+        text-decoration: underline; }
 
 footer {
   width: 100%; }
