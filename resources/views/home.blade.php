@@ -74,17 +74,35 @@
         <div class="page-container main-contents">
             <h2>Photo Gallery</h2>
         </div>
-        <div class="page-container main-contents">
-            <footer>
-                <h2>Supported by</h2>
+        <div class="main-contents footer">
+            <footer class="supported-by">
+                <h5>Supported by:</h5>
                 <a href="http://uu-u.uk/">
-                    <img src="/images/uu-u-logo.png" alt="uu-u design" />
+                    <img src="/images/uu-u-logo.png" alt="uu-u design" height="50" width="185" />
                 </a>
                 <a href="https://www.grouphub.co">
-                    <img src="/images/group-hub-logo.png" alt="Group Hub" />
+                    <img src="/images/group-hub-logo.png" alt="Group Hub - Group Management Platform" height="50" width="204" />
                 </a>
-                <div class="clear-fix"></div>
             </footer>
+            <footer class="created-by">
+                <h5>Created by:
+                    <a href="https://www.linkedin.com/in/ming-wu-4ab66931">Ming Wu</a> |
+                    <a href="https://uk.linkedin.com/in/johnwheal">John Wheal</a> |
+                    <a href="#">Hannah Storey</a>
+                </h5>
+            </footer>
+            <footer class="social-media">
+                <a href="#">
+                    <span class='symbol'>circlefacebook</span>
+                </a>
+                <a href="#">
+                    <span class='symbol'>circletwitterbird</span>
+                </a>
+                <a href="#">
+                    <span class='symbol'>circlerss</span>
+                </a>
+            </footer>
+
         </div>
     </div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

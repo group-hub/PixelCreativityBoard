@@ -2,6 +2,7 @@
 @import "partials/reset";
 @import "constants/colors";
 @import "partials/color-selector";
+@import "partials/fonts";
 
 html, body {
 	height: 100%;
@@ -228,14 +229,67 @@ h1 {
 
 footer {
 	width: 100%;
+	
+	h5 {
+		font-size: 18px;
+		display: inline-block;
+		vertical-align: middle;
+	}
 
 	a {
 		display: inline-block;
+		vertical-align: middle;
 
 		img {
 			height: 50px;
 		}
 	}
+}
+
+.main-contents.footer {
+	padding: 40px 20px;
+	margin-bottom: 0;
+	margin-top: 40px;
+	border-top: 4px solid $orange-color;
+}
+
+.created-by {
+	margin-top: 30px;
+
+	h5 {
+		font-size: 16px;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			vertical-align: middle;
+			display: inline-block;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.social-media {
+	margin-top: 30px;
+
+	a {
+		text-decoration: none;
+		font-size: 40px;
+		color: $color-black;
+		margin: 0 10px;
+		@include transition(all 0.2s linear);
+
+		&:hover {
+			color: $green-color;
+		}
+	}
+}
+
+.open-source {
+
 }
 
 .select-fundraiser {
