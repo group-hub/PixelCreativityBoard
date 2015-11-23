@@ -49,6 +49,6 @@ class Donation extends Model
 	 */
 	public function getMaxNumberOfPixels()
 	{
-		return $this->amount / env('PIXEL_VALUE');
+		return ceil($this->amount / env('PIXEL_VALUE'));
 	}
 }
