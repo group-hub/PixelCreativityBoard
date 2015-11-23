@@ -34,9 +34,10 @@
             <div class="clear-fix"></div>
         </div>
         <div class="page-container main-contents">
-            <h2>About the charity</h2>
-            <p>East African Playgrounds aims to enhance the lives of children across Uganda by developing children’s learning opportunities, creativity and environments through building playgrounds and running arts and play sessions. These playgrounds enable the children to make the most of their childhood by developing their social, mental and physical selves through play. We provide arts and play programs to emphasize the importance of play and help the children develop.</p>
-            <p>Our objectives are to train young men and women across East Africa to become professional builders and welders; to then use their new skills to build high quality playgrounds across East Africa. In doing this we aim to provide high quality training and employment through our playground building workshops. Uganda has a high youth unemployment rate, with 62% of has one of the world’s youngest population (78% being under 30). By constructing our playgrounds using local material and our teams of locally trained playground builders we are able to increase the impact we have on development in Uganda. The volunteers from our projects aren’t there to replace staff, these volunteers help with the building of the playground but also so we can train and employ more local staff.</p>
+            <h2>About <a href="http://www.eastafricanplaygrounds.org/">East African Playgrounds</a></h2>
+            <p>East African Playgrounds aims to enhance the lives of children across Uganda by developing children’s learning opportunities, creativity and environments through building playgrounds and running arts and play sessions. These playgrounds enable the children to make the most of their childhood by developing their social, mental and physical selves through play. They provide arts and play programs to emphasize the importance of play and help the children develop.</p>
+            <p>Their objectives are to train young men and women across East Africa to become professional builders and welders; to then use their new skills to build high quality playgrounds across East Africa. In doing this they aim to provide high quality training and employment through their playground building workshops.</p>
+            <p>Uganda has a high youth unemployment rate, with 62% of has one of the world’s youngest population (78% being under 30). By constructing our playgrounds using local material and their teams of locally trained playground builders they are able to increase the impact we have on development in Uganda. The volunteers from their projects aren’t there to replace staff, these volunteers help build the playgrounds but also so they can train and employ more local staff. </p>
         </div>
         <div class="page-container main-contents impact-container">
             <h2>East African Playgrounds impact so far</h2>
@@ -113,17 +114,17 @@
                 <h5>Created by:
                     <a href="https://www.linkedin.com/in/ming-wu-4ab66931">Ming Wu</a> |
                     <a href="https://uk.linkedin.com/in/johnwheal">John Wheal</a> |
-                    <a href="#">Hannah Storey</a>
+                    <a href="https://www.linkedin.com/in/hannahemilystorey">Hannah Storey</a>
                 </h5>
             </footer>
             <footer class="social-media">
-                <a href="#">
+                <a href="https://www.facebook.com/hellopixtivity">
                     <span class='symbol'>circlefacebook</span>
                 </a>
-                <a href="#">
+                <a href="https://www.twitter.com/HelloPixtivity">
                     <span class='symbol'>circletwitterbird</span>
                 </a>
-                <a href="#">
+                <a href="https://www.ugandagorillatrekeap.wordpress.com">
                     <span class='symbol'>circlerss</span>
                 </a>
             </footer>
