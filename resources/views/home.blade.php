@@ -14,8 +14,13 @@
                 @endforeach
             </table>
         </div>
-        @include ('partials/_instructions')
         <a href="{{ $justGivingUrl }}" class="donate-button">Donate</a>
+        @include ('partials/_instructions')
+        <div class="page-container main-contents">
+            <h2>Why did we create Pixtivity?</h2>
+            <p>Pixtivity was made by University of Portsmouth students to fundraise for our volunteering trip to Uganda with East African Playground. We are going there to help build a playground and help save silverback gorillas.</p>
+            <p>We encourage everyone to get imaginative together to create an ever evolving piece of art and to also have fun.</p>
+        </div>
         <div class="page-container main-contents fundraiser-container">
             <h2>University of Portsmouth Team 2015-16</h2>
             <ul>
@@ -27,10 +32,6 @@
                 @endforeach
             </ul>
             <div class="clear-fix"></div>
-        </div>
-        <div class="page-container main-contents">
-            <h2>Why did we create Pixtivity?</h2>
-            <p>INSERT TEXT ABOUT PROJECT</p>
         </div>
         <div class="page-container main-contents">
             <h2>About the charity</h2>

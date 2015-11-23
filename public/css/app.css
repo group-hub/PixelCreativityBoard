@@ -235,7 +235,7 @@ h1 {
   .main-contents p {
     font-size: 14px;
     line-height: 20px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px; }
     .main-contents p:last-child {
       margin-bottom: 0px; }
@@ -265,6 +265,8 @@ h1 {
       text-align: center;
       margin: 10px 0;
       color: #333; }
+      .instructions .instructions-container p a {
+        color: inherit; }
     .instructions .instructions-container .pixel-cost {
       font-weight: bold;
       text-decoration: underline; }
