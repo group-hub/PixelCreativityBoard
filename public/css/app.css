@@ -188,7 +188,7 @@ h2 {
   width: 20%;
   box-sizing: border-box;
   padding: 10px;
-  float: left; }
+  display: inline-block; }
   .fundraiser-container li img {
     width: 90px;
     height: 90px;
