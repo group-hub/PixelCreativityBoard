@@ -223,7 +223,6 @@ h1 {
 }
 
 .instructions {
-	padding: 0;
 	margin-top: 20px;
 
 	h2 {
@@ -233,10 +232,13 @@ h1 {
 		color: white;
 		text-transform: uppercase;
 		margin-bottom: 0;
+		margin-left: -20px;
+		margin-top:-20px;
+		width: 780px;
 	}
 
 	.instructions-container {
-		padding: 20px;
+		padding-top: 20px;
 
 		h3:first-child {
 			margin-top: 20px;

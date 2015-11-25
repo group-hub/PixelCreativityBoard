@@ -10,10 +10,9 @@
 
     <link rel="shortcut icon" href="/images/favicon.png">
 
-    <link rel="canonical" href="" />
     <meta property="fb:app_id" content="1135780893118642" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Pixtivity, where creativity does good" />
     <meta property="og:description" content="Pixtivity was made by University of Portsmouth students to fundraise for our volunteering trip to Uganda with East African Playgrounds." />
     <meta property="og:url" content="http://pixtivity.org/" />
