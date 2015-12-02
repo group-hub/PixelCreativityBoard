@@ -2,7 +2,6 @@
     @include ('partials/_header')
 
     <div class="container">
-        <h1>Selected <span id="selected-pixels">0</span> of <span id="max-pixels">{{ $maxPixels }}</span> pixels</h1>
         <div class="grid">
             <table>
                 @foreach($pixels as $gridRow)
@@ -14,6 +13,7 @@
                 @endforeach
             </table>
         </div>
+        <h1>Selected <span id="selected-pixels">0</span> of <span id="max-pixels">{{ $maxPixels }}</span> pixels</h1>
         <div class="color-selector" style="display: none">
             <select>
                 <option value="#c70101">#c70101</option>

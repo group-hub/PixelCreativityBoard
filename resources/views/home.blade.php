@@ -14,24 +14,13 @@
                 @endforeach
             </table>
         </div>
-        <a href="{{ $justGivingUrl }}" class="donate-button">Donate</a>
+        <a href="{{ $justGivingUrl }}" class="donate-button">Donate<br/><div class="eap-donate">to East African Playgrounds</div></a>
+        <img src="/images/justgiving.png" class="justgiving" alt="Just Giving" />
         @include ('partials/_instructions')
         <div class="page-container main-contents">
             <h2>Why did we create Pixtivity?</h2>
             <p>Pixtivity was made by University of Portsmouth students to fundraise for our volunteering trip to Uganda with East African Playground. We are going there to help build a playground and help save silverback gorillas.</p>
             <p>We encourage everyone to get imaginative together to create an ever evolving piece of art and to also have fun.</p>
-        </div>
-        <div class="page-container main-contents fundraiser-container">
-            <h2>University of Portsmouth Team 2015-16</h2>
-            <ul>
-                @foreach($fundraisers as $fundraiser)
-                    <li>
-                        <img src="{{ $fundraiser->image }}" alt="{{ $fundraiser->name }}" />
-                        <p>{{ $fundraiser->name }}</p>
-                    </li>
-                @endforeach
-            </ul>
-            <div class="clear-fix"></div>
         </div>
         <div class="page-container main-contents">
             <h2>About <a href="http://www.eastafricanplaygrounds.org/">East African Playgrounds</a></h2>
@@ -66,7 +55,7 @@
             <div class="clear-fix"></div>
         </div>
         <div class="page-container main-contents">
-            <h2>Team donation target</h2>
+            <h2>Donation target</h2>
             <div class="target">
                 <div class="amount-raised" style="width: {{ $percentageRaised }}%"></div>
             </div>
@@ -124,7 +113,7 @@
                 <a href="https://www.twitter.com/HelloPixtivity">
                     <span class='symbol'>circletwitterbird</span>
                 </a>
-                <a href="https://www.ugandagorillatrekeap.wordpress.com">
+                <a href="https://ugandagorillatrekeap.wordpress.com">
                     <span class='symbol'>circlerss</span>
                 </a>
             </footer>

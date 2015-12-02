@@ -85,7 +85,7 @@ header {
 
 .donate-button, .save-button {
 	display: block;
-	width: 800px;
+	width: 400px;
 	box-sizing: border-box;
 	padding: 15px;
 	background-color: $orange-color;
@@ -98,7 +98,17 @@ header {
 	margin-right: auto;
 	cursor: pointer;
 	margin-bottom: 20px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
 	@include transition(all 0.2s linear);
+
+	.eap-donate {
+		text-transform: none;
+		font-size: 18px;
+		padding-top: 10px;
+	}
 
 	&:hover {
 		background-color: lighten($orange-color, 8);
@@ -107,6 +117,10 @@ header {
 	&:active {
 		background-color: lighten($orange-color, 16);
 	}
+}
+
+.justgiving {
+	width: 150px;
 }
 
 h2 {
