@@ -26,6 +26,7 @@ class PageController extends Controller
     public function index(Request $request)
     {
         $pixels = Pixel::getPixels();
+
         $percentageRaised = Donation::getPercentageRaised();
 
         //Get all the fundraisers
