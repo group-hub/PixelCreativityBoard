@@ -11,11 +11,10 @@ html, body {
 body {
 	padding: 0;
 	width: 100%;
-	display: table;
 	font-weight: 400;
 	font-family: 'Lato';
-	background-color: $background-color;
-	margin-top: 85px;
+	background-color: $green-color;
+	overflow: hidden;
 }
 
 .clear-fix {
@@ -31,4 +30,162 @@ noscript {
 	color: white;
 	text-align: center;
 	padding: 20px;
+}
+
+.wrapper {
+	overflow: hidden;
+}
+
+.button {
+	display: block;
+	width: 400px;
+	box-sizing: border-box;
+	padding: 15px;
+	background-color: $orange-color;
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+	transition: all 0.2s linear;
+
+	&:hover {
+		background-color: darken($orange-color, 3);
+	}
+
+	&:active {
+		background-color: darken($orange-color, 5);
+	}
+}
+
+.left, .right {
+	float: left;
+	height: 100vh;
+}
+
+.left {
+	width: 77vh;
+	background-color: #333;
+	position: relative;
+
+	.grid {
+		margin-top: 4vh;
+		margin-left: 1vh;
+		margin-right: 1vh;
+		box-sizing: border-box;
+		height: 88vh;
+		width: calc(100% - 2vh);
+		background-color: #333;
+		border: 1px solid #555
+	}
+
+	.creators {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		font-size: 1.5vh;
+		margin-left: 1vh;
+		margin-bottom: 1vh;
+
+		p {
+			color: #777;
+			margin-top: 0.5vh;
+		}
+
+		a {
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.right {
+	width: calc(100% - 77vh);
+	background-color: $green-color;
+
+	.logo {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10vh;
+		height: 10vh;
+	}
+
+	h2 {
+		font-family: $heading-font;
+		text-align: center;
+		font-size: 7vh;
+		margin-top: 20vh;
+		color: white;
+	}
+
+	h3 {
+		font-family: $heading-font;
+		color: #EEE;
+		font-size: 4.4vh;
+		padding: 22px 0;
+		position: relative;
+		z-index: 1;
+		line-height: 32px;
+		text-align: center;
+		margin-top: 3vh;
+
+		span {
+			background-color: $green-color;
+			padding: 0 28px;
+		}
+
+		&:before {
+			border-top: 3px solid #EEE;
+			content: "";
+			margin: 0 auto;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 15em;
+			z-index: -1;
+		}
+	}
+
+	.start {
+		margin-top: 10vh;
+		width: 10em;
+	}
+
+	.powered-by-just-giving {
+		width: 100px;
+		opacity: 0.8;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+
+	.bottom {
+		background-color: white;
+		position: absolute;
+		bottom: 0;
+		width: calc(100% - 77vh);
+		height: 14vh;
+		background-color: $background-color;
+
+		img {
+			display: block;
+			height: 10vh;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 2vh;
+		}
+	}
 }
