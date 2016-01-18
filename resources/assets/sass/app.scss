@@ -15,6 +15,8 @@ body {
 	font-family: 'Lato';
 	background-color: $green-color;
 	overflow: hidden;
+	-webkit-font-smoothing: antialiased;
+	user-select: none;
 }
 
 .clear-fix {
@@ -189,5 +191,14 @@ noscript {
 			margin-right: auto;
 			margin-top: 2vh;
 		}
+	}
+
+	//Select Pixels
+	h4 {
+		font-family: $heading-font;
+		text-align: center;
+		font-size: 4vh;
+		margin-top: 20vh;
+		color: white;
 	}
 }

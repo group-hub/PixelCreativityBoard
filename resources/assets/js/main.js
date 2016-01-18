@@ -1,10 +1,26 @@
 var colorPicker = '';
-var colorSelected = '769641';
-var maxPixels = 0;
+var colorSelected = '00d4ff';
 var selectedPixels = 0;
-var fundraiser = 0;
+var pixelsSelected = [];
+var selectingPixels = false;
 
 $(document).ready(function () {
+
+    setTimeout(function() {
+        $('.grid rect').tooltipster();
+    }, 3000);
+
+    $('.start').click(function(event) {
+
+        $('.main-screen').fadeOut(500, function() {
+            $('.select-screen').fadeIn();
+        });
+
+        selectingPixels = true;
+
+        event.preventDefault();
+    });
+
     /**
      * Setup the color selector
      */
@@ -14,7 +30,6 @@ $(document).ready(function () {
     });
     $('.color-selector').html(colorPicker).show();
     $('#'+colorSelected).addClass('selected');
-    maxPixels = $('#max-pixels').html();
 
     /**
      * Select a color
@@ -31,40 +46,29 @@ $(document).ready(function () {
     /**
      * Select a grid item
      */
-    $('.grid td').click(function() {
+    $('.grid rect').click(function() {
         //If the grid item can be selected
-        if (!$(this).is('.disabled')) {
+        if (!$(this).is('.disabled') && selectingPixels) {
             //If the user has not currently selected the item
-            if (!$(this).hasClass('user-specified')) {
-                if (selectedPixels < maxPixels) {
-                    $(this).css('background-color', '#'+colorSelected).addClass('user-specified');
-                    selectedPixels++;
-                }
+            if (pixelsSelected.indexOf($(this).attr('id')) == -1) {
+                $(this).css('fill', '#'+colorSelected);
+                selectedPixels++;
+                pixelsSelected.push($(this).attr('id'));
             } else {
-                $(this).css('background-color', 'inherit').removeClass('user-specified');
+                $(this).css('fill', '#333').removeClass('user-specified');
                 selectedPixels--;
+                var index = pixelsSelected.indexOf($(this).attr('id'));
+                pixelsSelected.splice(index, 1);
             }
-            $('#selected-pixels').html(selectedPixels);
         }
-    });
 
-    /**
-     * Select fundraiser
-     */
-    $('.select-fundraiser li').click(function() {
-       $('.select-fundraiser li').each(function() {
-          $(this).removeClass('selected');
-       });
-
-        //Set the selected fundraiser
-        fundraiser = $(this).attr('id');
-        $(this).addClass('selected');
+        $('#donation-amount').html((selectedPixels*0.5).toFixed(2));
     });
 
     /**
      * Save the pixels
      */
-    $('.save-button').click(function() {
+    /*$('.save-button').click(function() {
         var pixels= [];
         $('.user-specified').each(function() {
             var coordinates = $(this).attr('id');
@@ -95,5 +99,5 @@ $(document).ready(function () {
             location.reload();
         });
 
-    });
+    });*/
 });

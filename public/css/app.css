@@ -37,18 +37,19 @@ table {
 
 .color-selector {
   box-sizing: border-box;
-  padding: 5px;
-  margin-top: 10px;
-  margin-bottom: 30px; }
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  display: block;
+  text-align: center; }
   .color-selector .color {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 4vh;
+    height: 4vh;
     cursor: pointer;
     vertical-align: middle; }
     .color-selector .color.selected, .color-selector .color:hover {
-      height: 40px;
-      width: 40px; }
+      height: 6vh;
+      width: 6vh; }
 
 @font-face {
   font-family: 'Mono Social Icons Font';
@@ -91,7 +92,12 @@ body {
   font-weight: 400;
   font-family: 'Lato';
   background-color: #74943D;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .clear-fix {
   display: block;
@@ -244,5 +250,11 @@ td {
       margin-left: auto;
       margin-right: auto;
       margin-top: 2vh; }
+  .right h4 {
+    font-family: "Slabo 27px", serif;
+    text-align: center;
+    font-size: 4vh;
+    margin-top: 20vh;
+    color: white; }
 
 /*# sourceMappingURL=app.css.map */

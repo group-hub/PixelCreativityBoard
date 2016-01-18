@@ -1,19 +1,20 @@
 .color-selector {
 	box-sizing: border-box;
-	padding: 5px;
-	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+	display: block;
+	text-align: center;
 	
 	.color {
 		display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: 4vh;
+		height: 4vh;
 		cursor: pointer;
 		vertical-align: middle;
 
 		&.selected, &:hover {
-			height: 40px;
-			width: 40px;
+			height: 6vh;
+			width: 6vh;
 		}
 	}
 }
