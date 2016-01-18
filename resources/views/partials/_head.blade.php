@@ -35,3 +35,4 @@
 
 </head>
 <body>
+<noscript>Pixtivity will not work without javascript</noscript>

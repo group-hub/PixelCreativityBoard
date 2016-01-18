@@ -37,6 +37,25 @@ class PageController extends Controller
     }
 
     /**
+     * Select pixels
+     *
+     * @param Request $request
+     * @return $this
+     */
+    public function select(Request $request)
+    {
+        $pixels = Pixel::getPixels();
+
+        $percentageRaised = Donation::getPercentageRaised();
+
+        return view('select')->with([
+            'pixels' => $pixels,
+            'percentageRaised' => $percentageRaised,
+            'justGivingUrl' => JustGiving::getDonationUrl()
+        ]);
+    }
+
+    /**
      * Called after a donation has been made
      *
      * @param Request $request

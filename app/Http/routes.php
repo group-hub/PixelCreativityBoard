@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'PageController@index');
+Route::get('/', ['as' => 'home', 'uses' =>'PageController@index']);
+
+Route::get('/select', 'PageController@select');
 
 Route::get('/donated', 'PageController@donated');
 

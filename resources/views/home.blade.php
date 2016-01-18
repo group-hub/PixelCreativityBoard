@@ -1,8 +1,7 @@
 @include ('partials/_head')
 
-<noscript>Pixtivity will not work without javascript</noscript>
-
 <div class="wrapper">
+
     <div class="left animated fadeInLeft">
         <div class="grid">
             <svg>
@@ -26,7 +25,7 @@
         <!--<img src="/images/logo.svg" alt="logo" class="logo animated fadeInDown" />-->
         <h2 class="animated fadeInDown">Help Build Playgrounds</h2>
         <h3 class="animated fadeInDown"><span>Create and Donate</span></h3>
-        <a href="#" class="button start animated fadeInUp">Start</a>
+        <a href="/select" class="button start animated fadeInUp">Start</a>
         <img src="/images/justgiving.png" alt="JustGiving" class="powered-by-just-giving animated fadeInUp" />
         <div class="bottom animated fadeInUp">
             <img src="/images/eap-logo.png" alt="East African Playgrounds" class="eap-logo" />
@@ -36,11 +35,30 @@
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="/js/jquery.tooltipster.min.js"></script>
+<script src="/js/jquery.smoothState.js"></script>
 <script>
     $(document).ready(function() {
         setTimeout(function() {
             $('.grid rect').tooltipster();
-        }, 1500);
+        }, 3000);
+
+        'use strict';
+        var $body = $('html, body'),
+            content = $('.wrapper').smoothState({
+                // Runs when a link has been activated
+                onStart: {
+                    duration: 0, // Duration of our animation
+                    render: function (url, $container) {
+                        // toggleAnimationClass() is a public method
+                        // for restarting css animations with a class
+                        content.toggleAnimationClass('is-exiting');
+                        // Scroll user to the top
+                        $body.animate({
+                            scrollTop: 0
+                        });
+                    }
+                }
+            }).data('smoothState');
     });
 </script>
 
