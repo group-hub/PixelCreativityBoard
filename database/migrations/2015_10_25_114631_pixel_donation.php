@@ -17,8 +17,7 @@ class PixelDonation extends Migration
             $table->integer('pixel_id')->unsigned();
             $table->integer('donation_id')->unsigned();
             $table->string('color');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
+            $table->integer('grid_num');
 
             $table->foreign('pixel_id')->references('id')->on('pixels');
             $table->foreign('donation_id')->references('id')->on('donations');

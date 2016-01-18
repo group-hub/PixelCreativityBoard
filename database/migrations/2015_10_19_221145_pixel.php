@@ -17,7 +17,7 @@ class Pixel extends Migration
             $table->smallInteger('x');
             $table->smallInteger('y');
             $table->string('color')->nullable();
-            $table->timestamp('expires_at')->nullable();
+            $table->string('name')->nullable();
         });
     }
 

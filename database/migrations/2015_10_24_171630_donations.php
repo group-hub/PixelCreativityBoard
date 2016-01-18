@@ -18,10 +18,7 @@ class Donations extends Migration
             $table->double('amount');
             $table->string('name')->nullable();
             $table->boolean('selected')->default(false);
-            $table->integer('fundraiser_id')->unsigned()->nullable();
             $table->timestamps();
-
-            $table->foreign('fundraiser_id')->references('id')->on('fundraisers');
         });
     }
 
@@ -32,10 +29,6 @@ class Donations extends Migration
      */
     public function down()
     {
-        Schema::table('donations', function (Blueprint $table) {
-            $table->dropForeign('donations_fundraiser_id_foreign');
-        });
-
         Schema::drop('donations');
     }
 }

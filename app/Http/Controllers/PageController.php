@@ -29,14 +29,10 @@ class PageController extends Controller
 
         $percentageRaised = Donation::getPercentageRaised();
 
-        //Get all the fundraisers
-        $fundraisers = Fundraiser::getAllFundraisers();
-
         return view('home')->with([
             'pixels' => $pixels,
             'percentageRaised' => $percentageRaised,
-            'justGivingUrl' => JustGiving::getDonationUrl(),
-            'fundraisers' => $fundraisers
+            'justGivingUrl' => JustGiving::getDonationUrl()
         ]);
     }
 

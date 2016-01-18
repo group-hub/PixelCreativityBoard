@@ -9,7 +9,7 @@
                 @foreach($pixels as $gridRow)
                     @foreach($gridRow as $pixel)
                         <rect x="{{ 1.42857 * $pixel->x }}%" y="{{ 1.25 * $pixel->y }}%" width="1.42857%" height="1.25%"
-                              style="fill:#333;stroke:#555;stroke-width:1;stroke-opacity:1.0" id="{{ $pixel->x }}x{{ $pixel->y }}"  />
+                              style="fill:@if ($pixel->color != null) {{ $pixel->color }} @else #333 @endif;stroke:#555;stroke-width:1;stroke-opacity:1.0" id="{{ $pixel->x }}x{{ $pixel->y }}" />
                     @endforeach
                 @endforeach
             </svg>

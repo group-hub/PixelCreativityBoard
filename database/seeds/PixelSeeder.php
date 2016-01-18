@@ -18,7 +18,7 @@ class PixelSeeder extends Seeder
                     'x' => $x,
                     'y' => $y,
                     'color' => null,
-                    'expires_at' => null,
+                    'name' => null,
                 ]);
             }
         }
