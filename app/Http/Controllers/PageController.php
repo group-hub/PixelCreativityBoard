@@ -2,8 +2,8 @@
 
 namespace PixelCreativityBoard\Http\Controllers;
 
+use Illuminate\Support\Facades\Response;
 use PixelCreativityBoard\Donation;
-use PixelCreativityBoard\Fundraiser;
 use PixelCreativityBoard\Pixel;
 use Illuminate\Http\Request;
 use PixelCreativityBoard\Http\Requests;
@@ -13,6 +13,8 @@ use PixelCreativityBoard\JustGiving;
 use Illuminate\Support\Facades\Log;
 use PixelCreativityBoard\PixelDonation;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
+use PixelCreativityBoard\Paying;
+use PixelCreativityBoard\PayingPixel;
 
 class PageController extends Controller
 {
@@ -31,32 +33,43 @@ class PageController extends Controller
 
         return view('home')->with([
             'pixels' => $pixels,
-            'percentageRaised' => $percentageRaised,
-            'justGivingUrl' => JustGiving::getDonationUrl()
+            'percentageRaised' => $percentageRaised
         ]);
     }
 
     /**
-     * Select pixels
+     * The user selected their pixels
      *
      * @param Request $request
-     * @return $this
+     * @return Response
      */
-    public function select(Request $request)
+    public function selected(Request $request)
     {
-        $pixels = Pixel::getPixels();
+        $paying = new Paying();
+        $paying->save();
 
-        $percentageRaised = Donation::getPercentageRaised();
+        //Loop through all the selected pixels
+        foreach($request->get('pixels') as $pixel) {
 
-        return view('select')->with([
-            'pixels' => $pixels,
-            'percentageRaised' => $percentageRaised,
-            'justGivingUrl' => JustGiving::getDonationUrl()
-        ]);
+            $savedPixel = Pixel::where('x', $pixel['x'])->where('y', $pixel['y'])->first();
+
+            //Save the paying pixel donation
+            $pixelDonation = new PayingPixel();
+            $pixelDonation->pixel_id = $savedPixel->id;
+            $pixelDonation->paying_id = $paying->id;
+            $pixelDonation->color = $pixel['color'];
+            $pixelDonation->save();
+        }
+
+        $amount = number_format(count($request->get('pixels'))/2, 2);
+
+        $donationUrl = JustGiving::getDonationUrl($paying->id, $amount);
+
+        return response($donationUrl, 200);
     }
 
     /**
-     * Called after a donation has been made
+     * Called after a selection has been made
      *
      * @param Request $request
      *

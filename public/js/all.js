@@ -11,12 +11,11 @@ $(document).ready(function () {
     }, 3000);
 
     $('.start').click(function(event) {
+        selectingPixels = true;
 
         $('.main-screen').fadeOut(500, function() {
             $('.select-screen').fadeIn();
         });
-
-        selectingPixels = true;
 
         event.preventDefault();
     });
@@ -60,45 +59,61 @@ $(document).ready(function () {
                 var index = pixelsSelected.indexOf($(this).attr('id'));
                 pixelsSelected.splice(index, 1);
             }
+        } else if (selectingPixels) {
+            swal({
+                title: "Someone's already taken that pixel!",
+                type: "error"
+            });
         }
 
         $('#donation-amount').html((selectedPixels*0.5).toFixed(2));
     });
 
     /**
-     * Save the pixels
+     * Save the pixels and redirect
      */
-    /*$('.save-button').click(function() {
-        var pixels= [];
-        $('.user-specified').each(function() {
-            var coordinates = $(this).attr('id');
-            var pixel = {
-                color: $(this).css('background-color'),
-                x: coordinates.substr(0, coordinates.indexOf('x')),
-                y: coordinates.substr(coordinates.indexOf('x')+1, coordinates.length)
+    $('.donate').click(function() {
+
+        $('.donate').attr("disabled", true);
+
+        if (pixelsSelected.length > 3) {
+            var pixels = [];
+            for (var i = 0; i < pixelsSelected.length; i++) {
+                var pixel = {
+                    color: $(this).css('fill'),
+                    x: pixelsSelected[i].substr(0, pixelsSelected[i].indexOf('x')),
+                    y: pixelsSelected[i].substr(pixelsSelected[i].indexOf('x') + 1, pixelsSelected[i].length)
+                };
+                pixels.push(pixel);
+            }
+
+            var data = {
+                pixels: pixels
             };
-            pixels.push(pixel);
-        });
 
-        var data = {
-            //Get the fundraiser
-            fundraiser: fundraiser,
-            pixels: pixels
-        };
+            //Save using ajax
+            $.ajax(selectedUrl, {
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                type: 'POST'
+            }).done(function (data) {
+                //Redirect to JustGiving
+                $(location).attr('href', data);
+            }).fail(function () {
+                swal({
+                    title: "Something's gone wrong. Please try again.",
+                    type: "error"
+                });
+                location.reload();
+            });
+        } else {
+            swal({
+                title: "You must select at least 4 pixels!",
+                type: "warning"
+            });
+        }
 
-        //Save using ajax
-        $.ajax(saveUrl, {
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            type: 'POST'
-        }).done(function() {
-            //Redirect back home
-            $(location).attr('href', siteUrl);
-        }).fail(function() {
-            alert("Something's gone wrong. Please try again");
-            location.reload();
-        });
-
-    });*/
+        event.preventDefault();
+    });
 });
 //# sourceMappingURL=all.js.map

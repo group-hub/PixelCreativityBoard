@@ -51,7 +51,7 @@
                     <option value="#ffffff">#ffffff</option>
                 </select>
             </div>
-            <a href="/select" class="button start">Donate &pound;<span id="donation-amount">0.00</span></a>
+            <a href="#donate" class="button donate">Donate &pound;<span id="donation-amount">0.00</span></a>
             <img src="/images/justgiving.png" alt="JustGiving" class="powered-by-just-giving" />
         </div>
         <div class="bottom animated fadeInUp">
@@ -63,6 +63,10 @@
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="/js/jquery.tooltipster.min.js"></script>
+<script src="/js/sweetalert.min.js"></script>
+<script>
+    var selectedUrl = "{{ route('selected') }}";
+</script>
 <script src="/js/all.js"></script>
 
 @include ('partials/_foot')

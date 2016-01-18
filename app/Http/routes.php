@@ -13,8 +13,8 @@
 
 Route::get('/', ['as' => 'home', 'uses' =>'PageController@index']);
 
-Route::get('/select', 'PageController@select');
+Route::post('/selected', ['as' => 'selected', 'uses' => 'PageController@selected']);
 
-Route::get('/donated', 'PageController@donated');
+//Route::get('/donated', 'PageController@donated');
 
-Route::post('/save/{donationId}', 'PageController@save');
+//Route::post('/save/{donationId}', 'PageController@save');

@@ -44,12 +44,15 @@ class JustGiving
 	/**
 	 * Get the donation url for JustGiving
 	 *
+	 * @param $payingId
+	 * @param $amount
+	 *
 	 * @return string
 	 */
-	public static function getDonationUrl()
+	public static function getDonationUrl($payingId, $amount)
 	{
-		$donateUrl = 'http://www.justgiving.com/'.self::$shortUrl.'/4w350m3/donate/?reference=pixitivity&exitUrl=';
-		$exitUrl = self::$siteUrl.'/donated?donationId=JUSTGIVING-DONATION-ID';
+		$donateUrl = 'http://www.justgiving.com/'.self::$shortUrl."/4w350m3/donate/?reference=pixitivity&amount=$amount&exitUrl=";
+		$exitUrl = self::$siteUrl."/donated?payingId=$payingId&donationId=JUSTGIVING-DONATION-ID";
 		//Encode the exit URL
 		$exitUrl = urlencode($exitUrl);
 		//Add the exit Url

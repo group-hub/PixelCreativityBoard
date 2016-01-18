@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/animate.min.css">
     <link rel="stylesheet" href="/css/tooltipster.css">
+    <link rel="stylesheet" href="/css/sweetalert.css">
 
     <link rel="shortcut icon" href="/images/favicon.png">
 

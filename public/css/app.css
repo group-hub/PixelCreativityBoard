@@ -151,7 +151,8 @@ td {
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s linear; }
+  transition: all 0.2s linear;
+  outline: none; }
   .button:hover {
     background-color: #f07500; }
   .button:active {
@@ -228,7 +229,7 @@ td {
       bottom: 0;
       width: 15em;
       z-index: -1; }
-  .right .start {
+  .right .start, .right .donate {
     margin-top: 10vh;
     width: 10em; }
   .right .powered-by-just-giving {
@@ -242,8 +243,7 @@ td {
     position: absolute;
     bottom: 0;
     width: calc(100% - 77vh);
-    height: 14vh;
-    background-color: #f8f8f8; }
+    height: 14vh; }
     .right .bottom img {
       display: block;
       height: 10vh;

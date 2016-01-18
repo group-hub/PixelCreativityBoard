@@ -4,14 +4,14 @@ namespace PixelCreativityBoard;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PixelDonation extends Model
+class PayingPixel extends Model
 {
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'pixel_donations';
+	protected $table = 'paying_pixels';
 
 	/**
 	 * Remove eloquent timestamps.
