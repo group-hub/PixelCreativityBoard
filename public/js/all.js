@@ -80,7 +80,7 @@ $(document).ready(function () {
             var pixels = [];
             for (var i = 0; i < pixelsSelected.length; i++) {
                 var pixel = {
-                    color: $(this).css('fill'),
+                    color: $("#"+pixelsSelected[i]).css("fill"),
                     x: pixelsSelected[i].substr(0, pixelsSelected[i].indexOf('x')),
                     y: pixelsSelected[i].substr(pixelsSelected[i].indexOf('x') + 1, pixelsSelected[i].length)
                 };

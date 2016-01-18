@@ -14,4 +14,13 @@ class Paying extends Model
 	 */
 	protected $table = 'paying';
 
+	/**
+	 * Get all the pixels the user was buying
+	 *
+	 * @return mixed
+	 */
+	public function getPixels()
+	{
+		return PayingPixel::where('paying_id', $this->id)->get();
+	}
 }

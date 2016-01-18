@@ -41,14 +41,4 @@ class Donation extends Model
 
 		return ($totalAmountRaised / env('TOTAL_AMOUNT', 5000)) * 100;
 	}
-
-	/**
-	 * Returns the maximum number of pixels
-	 *
-	 * @return float
-	 */
-	public function getMaxNumberOfPixels()
-	{
-		return ceil($this->amount / env('PIXEL_VALUE'));
-	}
 }

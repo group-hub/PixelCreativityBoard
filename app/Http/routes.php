@@ -15,6 +15,4 @@ Route::get('/', ['as' => 'home', 'uses' =>'PageController@index']);
 
 Route::post('/selected', ['as' => 'selected', 'uses' => 'PageController@selected']);
 
-//Route::get('/donated', 'PageController@donated');
-
-//Route::post('/save/{donationId}', 'PageController@save');
+Route::get('/donated', 'PageController@donated');

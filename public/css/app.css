@@ -93,6 +93,7 @@ body {
   font-family: 'Lato';
   background-color: #74943D;
   overflow: hidden;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -165,7 +166,8 @@ td {
 .left {
   width: 77vh;
   background-color: #333;
-  position: relative; }
+  position: relative;
+  float: left; }
   .left .grid {
     margin-top: 4vh;
     margin-left: 1vh;
@@ -192,7 +194,8 @@ td {
 
 .right {
   width: calc(100% - 77vh);
-  background-color: #74943D; }
+  background-color: #74943D;
+  float: right; }
   .right .logo {
     display: block;
     margin-left: auto;
@@ -256,5 +259,78 @@ td {
     font-size: 4vh;
     margin-top: 20vh;
     color: white; }
+  .right h5 {
+    font-family: "Slabo 27px", serif;
+    text-align: center;
+    font-size: 4vh;
+    margin-top: 40vh;
+    color: white; }
+
+@media screen and (max-width: 150vh) {
+  .left {
+    width: 60vh; }
+    .left .grid {
+      height: 68.57vh;
+      margin-top: 12.5vh; }
+  .right {
+    width: calc(100% - 60vh); }
+    .right .bottom {
+      width: calc(100% - 60vh); } }
+
+@media screen and (max-width: 128vh) {
+  .right h2 {
+    font-size: 4vh; }
+  .right h3 {
+    font-size: 3vh;
+    padding: 10px; }
+    .right h3 span {
+      padding: 10px; }
+    .right h3:before {
+      width: 40vh; }
+  .right h4 {
+    font-size: 2.8vh; }
+  .right h5 {
+    font-size: 2.8vh; }
+  .color-selector .color {
+    width: 2vh;
+    height: 2vh; }
+    .color-selector .color.selected {
+      width: 4vh;
+      height: 4vh; } }
+
+@media screen and (max-width: 100vh) {
+  body {
+    overflow-y: scroll; }
+  .left {
+    width: 100%;
+    height: inherit; }
+    .left .grid {
+      width: 90vw;
+      height: 102.857142vw;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      margin-left: auto;
+      margin-right: auto; }
+    .left .creators {
+      position: relative;
+      text-align: center;
+      margin-bottom: 40px;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto; }
+  .right {
+    width: 100%;
+    height: inherit; }
+    .right .bottom {
+      position: relative;
+      margin-top: 50px;
+      width: 100%;
+      height: inherit;
+      padding-top: 20px;
+      padding-bottom: 10px; }
+      .right .bottom img {
+        height: 50px;
+        margin-top: 0;
+        margin-bottom: 0; } }
 
 /*# sourceMappingURL=app.css.map */

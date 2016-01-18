@@ -15,6 +15,7 @@ body {
 	font-family: 'Lato';
 	background-color: $green-color;
 	overflow: hidden;
+	position: relative;
 	-webkit-font-smoothing: antialiased;
 	user-select: none;
 }
@@ -79,6 +80,7 @@ noscript {
 	width: 77vh;
 	background-color: #333;
 	position: relative;
+	float: left;
 
 	.grid {
 		margin-top: 4vh;
@@ -117,6 +119,7 @@ noscript {
 .right {
 	width: calc(100% - 77vh);
 	background-color: $green-color;
+	float: right;
 
 	.logo {
 		display: block;
@@ -200,5 +203,123 @@ noscript {
 		font-size: 4vh;
 		margin-top: 20vh;
 		color: white;
+	}
+
+	//Thank you
+	h5 {
+		font-family: $heading-font;
+		text-align: center;
+		font-size: 4vh;
+		margin-top: 40vh;
+		color: white;
+	}
+}
+
+@media screen and (max-width: 150vh) {
+	.left {
+		width: 60vh;
+
+		.grid {
+			height: 68.57vh;
+			margin-top: 12.5vh;
+		}
+	}
+
+	.right {
+		width: calc(100% - 60vh);
+
+		.bottom {
+			width: calc(100% - 60vh);
+		}
+	}
+}
+
+@media screen and (max-width: 128vh) {
+	.right {
+		h2 {
+			font-size: 4vh;
+		}
+
+		h3 {
+			font-size: 3vh;
+			padding: 10px;
+
+			span {
+				padding: 10px;
+			}
+
+			&:before {
+				width: 40vh;
+			}
+		}
+
+		h4 {
+			font-size: 2.8vh;
+		}
+
+		h5 {
+			font-size: 2.8vh;
+		}
+	}
+
+	.color-selector {
+		.color {
+			width: 2vh;
+			height: 2vh;
+
+			&.selected {
+				width: 4vh;
+				height: 4vh;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 100vh) {
+	body {
+		overflow-y: scroll;
+	}
+
+	.left {
+		width: 100%;
+		height: inherit;
+
+		.grid {
+			width: 90vw;
+			height: 102.857142vw;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.creators {
+			position: relative;
+			text-align: center;
+			margin-bottom: 40px;
+			width: 95%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.right {
+		width: 100%;
+		height: inherit;
+
+		.bottom {
+			position: relative;
+			margin-top: 50px;
+			width: 100%;
+			height: inherit;
+			padding-top: 20px;
+			padding-bottom: 10px;
+
+			img {
+				height: 50px;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
 	}
 }

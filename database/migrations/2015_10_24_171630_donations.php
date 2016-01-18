@@ -17,7 +17,6 @@ class Donations extends Migration
             $table->integer('just_giving_id');
             $table->double('amount');
             $table->string('name')->nullable();
-            $table->boolean('selected')->default(false);
             $table->timestamps();
         });
     }
