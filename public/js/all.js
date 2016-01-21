@@ -20,6 +20,20 @@ $(document).ready(function () {
         event.preventDefault();
     });
 
+    $('.instructions-button').click(function(event) {
+        swal({
+            title: "Instructions",
+            text: '<div class="instruction"><img src="/images/pictograms/picto1.jpeg" alt="Select a colour" /><p>Select a colour</p></div>' +
+            '<div class="instruction"><img src="/images/pictograms/picto2.jpg" alt="Create Art" /><p>Create amazing artwork</p></div>' +
+            '<div class="instruction"><img src="/images/pictograms/picto3.jpg" alt="Donate to Save" /><p>Donate to save</p></div>' +
+            '<div class="grid-full">When the grid is full, a new grid appears</div>',
+            html: true,
+            customClass: "instructions-modal"
+        });
+
+        event.preventDefault();
+    });
+
     /**
      * Setup the color selector
      */
@@ -53,11 +67,13 @@ $(document).ready(function () {
                 $(this).css('fill', '#'+colorSelected);
                 selectedPixels++;
                 pixelsSelected.push($(this).attr('id'));
+                updateDonateMore();
             } else {
                 $(this).css('fill', '#333').removeClass('user-specified');
                 selectedPixels--;
                 var index = pixelsSelected.indexOf($(this).attr('id'));
                 pixelsSelected.splice(index, 1);
+                updateDonateMore();
             }
         } else if (selectingPixels) {
             swal({
@@ -68,6 +84,40 @@ $(document).ready(function () {
 
         $('#donation-amount').html((selectedPixels*0.5).toFixed(2));
     });
+
+    var updateDonateMore = function () {
+        var message = '';
+        var pixelsLeft = 0;
+
+        if (selectedPixels < 10) {
+            pixelsLeft = 10 - selectedPixels;
+            message = "a swing seat";
+        } else if (selectedPixels < 20) {
+            pixelsLeft = 20 - selectedPixels;
+            message = "a fun pretend motorbike";
+        } else if (selectedPixels < 50) {
+            pixelsLeft = 50 - selectedPixels;
+            message = "a low tyre bridge";
+        } else if (selectedPixels < 80) {
+            pixelsLeft = 80 - selectedPixels;
+            message = "two pretend cars";
+        } else if (selectedPixels < 180) {
+            pixelsLeft = 180 - selectedPixels;
+            message = "a slide";
+        }
+
+        if (message != '') {
+            if (pixelsLeft == 1) {
+                message = "1 more pixel = " + message;
+            } else {
+                message = pixelsLeft + " more pixels = " + message;
+            }
+        }
+
+        $(".donate-more").html(message);
+    };
+
+    updateDonateMore();
 
     /**
      * Save the pixels and redirect

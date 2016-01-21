@@ -3,11 +3,11 @@
 <div class="wrapper">
 
     <div class="right">
-        <!--<img src="/images/logo.svg" alt="logo" class="logo animated fadeInDown" />-->
         <div class="main-screen">
             <h2 class="animated fadeInDown">Help Build Playgrounds</h2>
             <h3 class="animated fadeInDown"><span>Create and Donate</span></h3>
             <a href="/#select" class="button start animated fadeInUp">Start</a>
+            <a href="#instructions" class="instructions-button button animated fadeInUp">Instructions</a>
             <img src="/images/justgiving.png" alt="JustGiving" class="powered-by-just-giving animated fadeInUp" />
         </div>
         <div class="select-screen" style="display: none">
@@ -32,6 +32,7 @@
                     <option value="#ffffff">#ffffff</option>
                 </select>
             </div>
+            <div class="donate-more"></div>
             <a href="#donate" class="button donate">Donate &pound;<span id="donation-amount">0.00</span></a>
             <img src="/images/justgiving.png" alt="JustGiving" class="powered-by-just-giving" />
         </div>

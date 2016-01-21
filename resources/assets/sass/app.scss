@@ -71,6 +71,19 @@ noscript {
 	}
 }
 
+.instructions-button {
+	background-color: inherit;
+	font-size: 14px;
+
+	&:hover {
+		background-color: darken($green-color, 1);
+	}
+
+	&:active {
+		background-color: darken($green-color, 3);
+	}
+}
+
 .left, .right {
 	float: left;
 	height: 100vh;
@@ -93,13 +106,17 @@ noscript {
 		border: 1px solid #555;
 	}
 
-	.creators {
+	.bottom {
 		position: absolute;
 		width: 100%;
 		bottom: 0;
 		font-size: 1.5vh;
 		margin-left: 1vh;
 		margin-bottom: 1vh;
+
+		.creators {
+			float: left;
+		}
 
 		p {
 			color: #777;
@@ -113,6 +130,23 @@ noscript {
 				text-decoration: none;
 			}
 		}
+
+		img {
+			height: 3vh;
+			text-align: right;
+			position: absolute;
+			right: 2.5vh;
+			opacity: 0.6;
+		}
+	}
+
+	.logo {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10vh;
+		height: 2vh;
+		float: right;
 	}
 }
 
@@ -120,14 +154,6 @@ noscript {
 	width: calc(100% - 77vh);
 	background-color: $green-color;
 	float: right;
-
-	.logo {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 10vh;
-		height: 10vh;
-	}
 
 	h2 {
 		font-family: $heading-font;
@@ -169,7 +195,6 @@ noscript {
 
 	.start, .donate {
 		margin-top: 10vh;
-		width: 10em;
 	}
 
 	.powered-by-just-giving {
@@ -178,6 +203,7 @@ noscript {
 		margin-left: auto;
 		margin-right: auto;
 		display: block;
+		margin-bottom: 10vh;
 	}
 
 	.bottom {
@@ -205,6 +231,14 @@ noscript {
 		color: white;
 	}
 
+	.donate-more {
+		font-family: $heading-font;
+		text-align: center;
+		font-size: 2.5vh;
+		margin-top: 5vh;
+		color: white;
+	}
+
 	//Thank you
 	h5 {
 		font-family: $heading-font;
@@ -212,6 +246,28 @@ noscript {
 		font-size: 4vh;
 		margin-top: 40vh;
 		color: white;
+	}
+}
+
+.instructions-modal {
+	margin-top: -40vh !important;
+	max-width: 800px !important;
+	width: 90% !important;
+	margin-left: -400px !important;
+
+	.instruction {
+		display: inline-block;
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+
+	p {
+		padding-top: 10px !important;
+	}
+
+	.grid-full {
+		padding-top: 30px !important;
+		font-style: italic;
 	}
 }
 
@@ -257,6 +313,10 @@ noscript {
 			font-size: 2.8vh;
 		}
 
+		.donate-more {
+			font-size: 1.8vh;
+		}
+
 		h5 {
 			font-size: 2.8vh;
 		}
@@ -293,13 +353,23 @@ noscript {
 			margin-right: auto;
 		}
 
-		.creators {
+		.bottom {
 			position: relative;
 			text-align: center;
 			margin-bottom: 40px;
 			width: 95%;
 			margin-left: auto;
 			margin-right: auto;
+
+			.creators {
+				float: none;
+			}
+
+			img {
+				position: relative;
+				margin-top: 30px;
+				right: inherit;
+			}
 		}
 	}
 
