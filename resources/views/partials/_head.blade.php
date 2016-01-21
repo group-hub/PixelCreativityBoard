@@ -20,7 +20,7 @@
     <meta property="og:description" content="Pixtivity was made by University of Portsmouth students to fundraise for our volunteering trip to Uganda with East African Playgrounds." />
     <meta property="og:url" content="http://pixtivity.org/" />
     <meta property="og:site_name" content="Pixtivity" />
-    <meta property="og:image" content="{{ env('SITE_URL') }}/images/facebook.jpg" />
+    <meta property="og:image" content="{{ env('SITE_URL') }}/image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="article:publisher" content="https://www.facebook.com/hellopixtivity" />
@@ -32,7 +32,7 @@
     <meta name="twitter:creator" content="@hellopixtivity">
     <meta name="twitter:title" content="Pixtivity, where creativity does good">
     <meta name="twitter:description" content="Pixtivity was made by University of Portsmouth students to fundraise for our volunteering trip to Uganda with East African Playgrounds.">
-    <meta name="twitter:image:src" content="{{ env('SITE_URL') }}/images/twitter.jpg">
+    <meta name="twitter:image:src" content="{{ env('SITE_URL') }}/image.png">
 
 </head>
 <body>
