@@ -15,6 +15,7 @@ use PixelCreativityBoard\PixelDonation;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 use PixelCreativityBoard\Paying;
 use PixelCreativityBoard\PayingPixel;
+use Imagick;
 
 class PageController extends Controller
 {
@@ -127,6 +128,34 @@ class PageController extends Controller
         return view('thank-you')->with([
             'pixels' => $pixels
         ]);
+    }
+
+    /**
+     * Generate the grid as an image
+     */
+    public function image() {
+        $pixels = Pixel::getPixels();
+
+        $svg = '<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" width="700" height="800">';
+        foreach ($pixels as $gridRow) {
+            foreach ($gridRow as $pixel) {
+                $svg .= '<rect x="' . 10 * $pixel->x . '" y="' . 10 * $pixel->y . '" width="10" height="10" style="fill:';
+                $svg .= ($pixel->color != null) ? $pixel->color : "#333";
+                $svg .= ';stroke:#555;stroke-width:1;stroke-opacity:1.0;" />';
+                $svg .= $pixel->x . "x";
+            }
+        }
+        $svg .= '</svg>';
+
+        $im = new Imagick();
+        $im->readImageBlob($svg);
+
+        $im->setImageFormat("png32");
+
+        header('Content-type: image/png');
+
+        echo $im;
+
     }
 
 }

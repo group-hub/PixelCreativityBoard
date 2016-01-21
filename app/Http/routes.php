@@ -16,3 +16,5 @@ Route::get('/', ['as' => 'home', 'uses' =>'PageController@index']);
 Route::post('/selected', ['as' => 'selected', 'uses' => 'PageController@selected']);
 
 Route::get('/donated', 'PageController@donated');
+
+Route::get('/image.png', 'PageController@image');
