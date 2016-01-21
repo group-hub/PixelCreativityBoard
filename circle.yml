@@ -8,6 +8,8 @@ test:
     - php artisan migrate:refresh --seed --force
   override:
     - vendor/bin/codecept run
+  post:
+    - rm -r node_modules
 deployment:
   staging:
     branch: master
