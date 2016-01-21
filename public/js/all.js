@@ -1,10 +1,39 @@
 var colorPicker = '';
-var colorSelected = '769641';
-var maxPixels = 0;
+var colorSelected = '00d4ff';
 var selectedPixels = 0;
-var fundraiser = 0;
+var pixelsSelected = [];
+var selectingPixels = false;
 
 $(document).ready(function () {
+
+    setTimeout(function() {
+        $('.grid rect').tooltipster();
+    }, 3000);
+
+    $('.start').click(function(event) {
+        selectingPixels = true;
+
+        $('.main-screen').fadeOut(500, function() {
+            $('.select-screen').fadeIn();
+        });
+
+        event.preventDefault();
+    });
+
+    $('.instructions-button').click(function(event) {
+        swal({
+            title: "Instructions",
+            text: '<div class="instruction"><img src="/images/pictograms/picto1.jpeg" alt="Select a colour" /><p>Select a colour</p></div>' +
+            '<div class="instruction"><img src="/images/pictograms/picto2.jpg" alt="Create Art" /><p>Create amazing artwork</p></div>' +
+            '<div class="instruction"><img src="/images/pictograms/picto3.jpg" alt="Donate to Save" /><p>Donate to save</p></div>' +
+            '<div class="grid-full">When the grid is full, a new grid appears</div>',
+            html: true,
+            customClass: "instructions-modal"
+        });
+
+        event.preventDefault();
+    });
+
     /**
      * Setup the color selector
      */
@@ -14,7 +43,6 @@ $(document).ready(function () {
     });
     $('.color-selector').html(colorPicker).show();
     $('#'+colorSelected).addClass('selected');
-    maxPixels = $('#max-pixels').html();
 
     /**
      * Select a color
@@ -31,70 +59,111 @@ $(document).ready(function () {
     /**
      * Select a grid item
      */
-    $('.grid td').click(function() {
+    $('.grid rect').click(function() {
         //If the grid item can be selected
-        if (!$(this).is('.disabled')) {
+        if (!$(this).is('.disabled') && selectingPixels) {
             //If the user has not currently selected the item
-            if (!$(this).hasClass('user-specified')) {
-                if (selectedPixels < maxPixels) {
-                    $(this).css('background-color', '#'+colorSelected).addClass('user-specified');
-                    selectedPixels++;
-                }
+            if (pixelsSelected.indexOf($(this).attr('id')) == -1) {
+                $(this).css('fill', '#'+colorSelected);
+                selectedPixels++;
+                pixelsSelected.push($(this).attr('id'));
+                updateDonateMore();
             } else {
-                $(this).css('background-color', 'inherit').removeClass('user-specified');
+                $(this).css('fill', '#333').removeClass('user-specified');
                 selectedPixels--;
+                var index = pixelsSelected.indexOf($(this).attr('id'));
+                pixelsSelected.splice(index, 1);
+                updateDonateMore();
             }
-            $('#selected-pixels').html(selectedPixels);
+        } else if (selectingPixels) {
+            swal({
+                title: "Someone's already taken that pixel!",
+                type: "error"
+            });
         }
+
+        $('#donation-amount').html((selectedPixels*0.5).toFixed(2));
     });
 
-    /**
-     * Select fundraiser
-     */
-    $('.select-fundraiser li').click(function() {
-       $('.select-fundraiser li').each(function() {
-          $(this).removeClass('selected');
-       });
+    var updateDonateMore = function () {
+        var message = '';
+        var pixelsLeft = 0;
 
-        //Set the selected fundraiser
-        fundraiser = $(this).attr('id');
-        $(this).addClass('selected');
-    });
+        if (selectedPixels < 10) {
+            pixelsLeft = 10 - selectedPixels;
+            message = "a swing seat";
+        } else if (selectedPixels < 20) {
+            pixelsLeft = 20 - selectedPixels;
+            message = "a fun pretend motorbike";
+        } else if (selectedPixels < 50) {
+            pixelsLeft = 50 - selectedPixels;
+            message = "a low tyre bridge";
+        } else if (selectedPixels < 80) {
+            pixelsLeft = 80 - selectedPixels;
+            message = "two pretend cars";
+        } else if (selectedPixels < 180) {
+            pixelsLeft = 180 - selectedPixels;
+            message = "a slide";
+        }
+
+        if (message != '') {
+            if (pixelsLeft == 1) {
+                message = "1 more pixel = " + message;
+            } else {
+                message = pixelsLeft + " more pixels = " + message;
+            }
+        }
+
+        $(".donate-more").html(message);
+    };
+
+    updateDonateMore();
 
     /**
-     * Save the pixels
+     * Save the pixels and redirect
      */
-    $('.save-button').click(function() {
-        var pixels= [];
-        $('.user-specified').each(function() {
-            var coordinates = $(this).attr('id');
-            var pixel = {
-                color: $(this).css('background-color'),
-                x: coordinates.substr(0, coordinates.indexOf('x')),
-                y: coordinates.substr(coordinates.indexOf('x')+1, coordinates.length)
+    $('.donate').click(function() {
+
+        $('.donate').attr("disabled", true);
+
+        if (pixelsSelected.length > 3) {
+            var pixels = [];
+            for (var i = 0; i < pixelsSelected.length; i++) {
+                var pixel = {
+                    color: $("#"+pixelsSelected[i]).css("fill"),
+                    x: pixelsSelected[i].substr(0, pixelsSelected[i].indexOf('x')),
+                    y: pixelsSelected[i].substr(pixelsSelected[i].indexOf('x') + 1, pixelsSelected[i].length)
+                };
+                pixels.push(pixel);
+            }
+
+            var data = {
+                pixels: pixels
             };
-            pixels.push(pixel);
-        });
 
-        var data = {
-            //Get the fundraiser
-            fundraiser: fundraiser,
-            pixels: pixels
-        };
+            //Save using ajax
+            $.ajax(selectedUrl, {
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                type: 'POST'
+            }).done(function (data) {
+                //Redirect to JustGiving
+                $(location).attr('href', data);
+            }).fail(function () {
+                swal({
+                    title: "Something's gone wrong. Please try again.",
+                    type: "error"
+                });
+                location.reload();
+            });
+        } else {
+            swal({
+                title: "You must select at least 4 pixels!",
+                type: "warning"
+            });
+        }
 
-        //Save using ajax
-        $.ajax(saveUrl, {
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            type: 'POST'
-        }).done(function() {
-            //Redirect back home
-            $(location).attr('href', siteUrl);
-        }).fail(function() {
-            alert("Something's gone wrong. Please try again");
-            location.reload();
-        });
-
+        event.preventDefault();
     });
 });
 //# sourceMappingURL=all.js.map

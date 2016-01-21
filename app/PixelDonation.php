@@ -20,9 +20,4 @@ class PixelDonation extends Model
 	 */
 	public $timestamps = false;
 
-	protected $dates = [
-		'start_time',
-		'end_time'
-	];
-
 }
