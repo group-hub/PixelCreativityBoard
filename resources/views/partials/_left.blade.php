@@ -14,7 +14,7 @@
     <div class="bottom">
         <div class="creators">
             <p>Created by <a href="https://uk.linkedin.com/in/johnwheal">John Wheal</a>, <a href="https://www.linkedin.com/in/ming-wu-4ab66931">Ming Wu</a> &amp; <a href="https://www.linkedin.com/in/hannahemilystorey">Hannah Storey</a></p>
-            <p>Supported by <a href="https://www.grouphub.co">Group Hub</a> &amp; <a href="http://www.uu-u.uk">UU-U</a></p>
+            <p>Supported by <a href="https://www.grouphub.co">Group Hub</a> &amp; <a href="http://uu-u.uk">UU-U</a></p>
         </div>
         <img src="/images/logo.png" alt="Pixtivity" />
     </div>
