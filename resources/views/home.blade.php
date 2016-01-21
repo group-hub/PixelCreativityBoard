@@ -37,7 +37,9 @@
             <img src="/images/justgiving.png" alt="JustGiving" class="powered-by-just-giving" />
         </div>
         <div class="bottom animated fadeInUp">
-            <img src="/images/eap-logo.png" alt="East African Playgrounds" class="eap-logo" />
+            <a href="http://www.eastafricanplaygrounds.org/">
+                <img src="/images/eap-logo.png" alt="East African Playgrounds" class="eap-logo" />
+            </a>
         </div>
     </div>
 

@@ -10,7 +10,9 @@
             <h5>Thank You! Your pixels have been saved!</h5>
         </div>
         <div class="bottom animated fadeInUp">
-            <img src="/images/eap-logo.png" alt="East African Playgrounds" class="eap-logo" />
+            <a href="http://www.eastafricanplaygrounds.org/">
+                <img src="/images/eap-logo.png" alt="East African Playgrounds" class="eap-logo" />
+            </a>
         </div>
     </div>
 
