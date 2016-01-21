@@ -286,8 +286,21 @@ td {
     font-family: "Slabo 27px", serif;
     text-align: center;
     font-size: 4vh;
-    margin-top: 40vh;
-    color: white; }
+    margin-top: 30vh;
+    color: white;
+    margin-bottom: 10vh; }
+  .right .facebook {
+    background-color: #3B5998; }
+    .right .facebook:hover {
+      background-color: #37538d; }
+    .right .facebook:active {
+      background-color: #344e86; }
+  .right .twitter {
+    background-color: #55acee; }
+    .right .twitter:hover {
+      background-color: #47a5ed; }
+    .right .twitter:active {
+      background-color: #3ea1ec; }
 
 .instructions-modal {
   margin-top: -40vh !important;

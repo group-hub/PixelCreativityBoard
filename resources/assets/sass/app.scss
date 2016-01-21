@@ -244,8 +244,33 @@ noscript {
 		font-family: $heading-font;
 		text-align: center;
 		font-size: 4vh;
-		margin-top: 40vh;
+		margin-top: 30vh;
 		color: white;
+		margin-bottom: 10vh;
+	}
+
+	.facebook {
+		background-color: #3B5998;
+
+		&:hover {
+			background-color: darken(#3B5998, 3);
+		}
+
+		&:active {
+			background-color: darken(#3B5998, 5);
+		}
+	}
+
+	.twitter {
+		background-color: #55acee;
+
+		&:hover {
+			background-color: darken(#55acee, 3);
+		}
+
+		&:active {
+			background-color: darken(#55acee, 5);
+		}
 	}
 }
 
