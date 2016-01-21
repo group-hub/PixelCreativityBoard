@@ -160,12 +160,12 @@ td {
     background-color: #e67000; }
 
 .instructions-button {
-  background-color: inherit;
+  background-color: #6c8939;
   font-size: 14px; }
   .instructions-button:hover {
-    background-color: #71903c; }
+    background-color: #668236; }
   .instructions-button:active {
-    background-color: #6c8939; }
+    background-color: #607b33; }
 
 .left, .right {
   float: left;

@@ -72,15 +72,15 @@ noscript {
 }
 
 .instructions-button {
-	background-color: inherit;
+	background-color: darken($green-color, 3);
 	font-size: 14px;
 
 	&:hover {
-		background-color: darken($green-color, 1);
+		background-color: darken($green-color, 5);
 	}
 
 	&:active {
-		background-color: darken($green-color, 3);
+		background-color: darken($green-color, 7);
 	}
 }
 
