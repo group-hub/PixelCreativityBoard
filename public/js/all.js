@@ -110,7 +110,7 @@ $(document).ready(function () {
             if (pixelsLeft == 1) {
                 message = "1 more pixel = " + message;
             } else {
-                message = pixelsLeft + " more pixels = " + message;
+                message = pixelsLeft + " more pixels would build " + message;
             }
         }
 
@@ -166,4 +166,5 @@ $(document).ready(function () {
         event.preventDefault();
     });
 });
+
 //# sourceMappingURL=all.js.map
