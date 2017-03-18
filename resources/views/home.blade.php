@@ -4,7 +4,9 @@
 
     <div class="right">
         <div class="main-screen">
-            <a href="http://www.childrenssociety.org.uk/"><img src="/images/cs-logo.png" align="The Children's Society" class="logo animated fadeInDown" /></a>
+            <div id="image-swap">
+                <img src="/images/pixtivity.png" alt="Pixtivity" id="logo-1" class="logo animated fadeInDown" />
+            </div>
             <h3 class="animated fadeInDown"><span>Welcome to Pixtivity!</span></h3>
             <p>The online fundraising donation game where you can have fun, creating pixel art and donate to charity!</p>
             <p>This game has been designed to fundraise money by University of Portsmouth students for <a href="http://www.childrenssociety.org.uk/">The Children's Society</a> a UK children's charity. Charity Registration No. 221124</p>

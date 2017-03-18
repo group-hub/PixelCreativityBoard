@@ -6,6 +6,12 @@ var selectingPixels = false;
 
 $(document).ready(function () {
 
+    var setImageTwo = function() {
+        $('#image-swap').fadeIn(500).html('<a href="http://www.childrenssociety.org.uk/" id="logo-2"><img src="/images/cs-logo.png" alt="The Children\'s Society" class="logo" /></a>');
+    };
+
+    $('#image-swap').delay(2000).fadeOut(500, function () { setImageTwo(); });
+
     setTimeout(function() {
         $('.grid rect').tooltipster();
     }, 3000);
