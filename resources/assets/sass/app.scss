@@ -57,30 +57,28 @@ noscript {
 	margin-right: auto;
 	cursor: pointer;
 	margin-bottom: 20px;
-	border-radius: 5px;
-	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
 	transition: all 0.2s linear;
 	outline: none;
 
 	&:hover {
-		background-color: darken($orange-color, 3);
+		background-color: lighten($orange-color, 25);
 	}
 
 	&:active {
-		background-color: darken($orange-color, 5);
+		background-color: lighten($orange-color, 35);
 	}
 }
 
 .instructions-button {
-	background-color: darken($green-color, 3);
+	background-color: lighten($orange-color, 50);
 	font-size: 14px;
 
 	&:hover {
-		background-color: darken($green-color, 5);
+		background-color: lighten($orange-color, 60);
 	}
 
 	&:active {
-		background-color: darken($green-color, 7);
+		background-color: lighten($orange-color, 70);
 	}
 }
 
@@ -164,9 +162,8 @@ noscript {
 	}
 
 	h3 {
-		font-family: $heading-font;
-		color: #EEE;
-		font-size: 4.4vh;
+		color: $orange-color;
+		font-size: 4.7vh;
 		padding: 22px 0;
 		position: relative;
 		z-index: 1;
@@ -178,23 +175,10 @@ noscript {
 			background-color: $green-color;
 			padding: 0 28px;
 		}
-
-		&:before {
-			border-top: 3px solid #EEE;
-			content: "";
-			margin: 0 auto;
-			position: absolute;
-			top: 50%;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			width: 15em;
-			z-index: -1;
-		}
 	}
 
 	.start, .donate {
-		margin-top: 10vh;
+		margin-top: 5vh;
 	}
 
 	.powered-by-just-giving {
@@ -204,6 +188,21 @@ noscript {
 		margin-right: auto;
 		display: block;
 		margin-bottom: 10vh;
+	}
+
+	p {
+		padding: 2vh 10vh;
+		text-align: center;
+		font-size: 2.1vh;
+		line-height: 5vh;
+	}
+
+	.logo {
+		display: block;
+		height: 20vh;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 5vh;
 	}
 
 	.bottom {
@@ -224,29 +223,36 @@ noscript {
 
 	//Select Pixels
 	h4 {
-		font-family: $heading-font;
 		text-align: center;
 		font-size: 4vh;
 		margin-top: 20vh;
-		color: white;
+		color: $orange-color;
 	}
 
 	.donate-more {
-		font-family: $heading-font;
 		text-align: center;
 		font-size: 2.5vh;
 		margin-top: 5vh;
-		color: white;
+		color: $orange-color;
+	}
+
+	.anonymous-warning {
+		text-align: center;
+		font-size: 1.5vh;
+		margin-bottom: 3vh;
+	}
+
+	strong {
+		font-weight: bold;
 	}
 
 	//Thank you
 	h5 {
-		font-family: $heading-font;
 		text-align: center;
 		font-size: 4vh;
-		margin-top: 30vh;
-		color: white;
-		margin-bottom: 10vh;
+		margin-top: 15vh;
+		color: $orange-color;
+		margin-bottom: 15vh;
 	}
 
 	.facebook {
@@ -336,6 +342,10 @@ noscript {
 
 		h4 {
 			font-size: 2.8vh;
+		}
+
+		p {
+			font-size: 2vh;
 		}
 
 		.donate-more {

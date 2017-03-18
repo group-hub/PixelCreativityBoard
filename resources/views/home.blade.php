@@ -4,8 +4,10 @@
 
     <div class="right">
         <div class="main-screen">
-            <h2 class="animated fadeInDown">Help Build Playgrounds</h2>
-            <h3 class="animated fadeInDown"><span>Create and Donate</span></h3>
+            <a href="http://www.childrenssociety.org.uk/"><img src="/images/cs-logo.png" align="The Children's Society" class="logo animated fadeInDown" /></a>
+            <h3 class="animated fadeInDown"><span>Welcome to Pixtivity!</span></h3>
+            <p>The online fundraising donation game where you can have fun, creating pixil art and donate to charity!</p>
+            <p>This game has been designed to fundraise money by University of Portsmouth students for The Children's Society a UK children's charity. Charity Registration No. 221124</p>
             <a href="/#select" class="button start animated fadeInUp">Start</a>
             <a href="#instructions" class="instructions-button button animated fadeInUp">Instructions</a>
             <img src="/images/justgiving.png" alt="JustGiving" class="powered-by-just-giving animated fadeInUp" />
@@ -34,12 +36,8 @@
             </div>
             <div class="donate-more"></div>
             <a href="#donate" class="button donate">Donate &pound;<span id="donation-amount">0.00</span></a>
+            <div class="anonymous-warning"><strong>Warning:</strong> If you make the donation anonymous, we can't save your pixels :(</div>
             <img src="/images/justgiving.png" alt="JustGiving" class="powered-by-just-giving" />
-        </div>
-        <div class="bottom animated fadeInUp">
-            <a href="http://www.eastafricanplaygrounds.org/">
-                <img src="/images/eap-logo.png" alt="East African Playgrounds" class="eap-logo" />
-            </a>
         </div>
     </div>
 
