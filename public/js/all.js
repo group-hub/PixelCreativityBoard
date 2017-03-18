@@ -82,7 +82,7 @@ $(document).ready(function () {
             });
         }
 
-        $('#donation-amount').html((selectedPixels*0.5).toFixed(2));
+        $('#donation-amount').html((selectedPixels*0.25).toFixed(2));
     });
 
     var updateDonateMore = function () {
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
         $('.donate').attr("disabled", true);
 
-        if (pixelsSelected.length > 3) {
+        if (pixelsSelected.length > 7) {
             var pixels = [];
             for (var i = 0; i < pixelsSelected.length; i++) {
                 var pixel = {
@@ -158,7 +158,7 @@ $(document).ready(function () {
             });
         } else {
             swal({
-                title: "You must select at least 4 pixels!",
+                title: "You must select at least 8 pixels!",
                 type: "warning"
             });
         }
