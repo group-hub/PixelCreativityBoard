@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Pixtivity</title>
-    <meta name="description" content="Pixtivity was made by University of Portsmouth students to fundraise for our volunteering trip to Uganda with East African Playground. We are going there to help build a playground and help save silverback gorillas." />
+    <meta name="description" content="Pixtivity was made by University of Portsmouth students to fundraise for The Children's Society, a UK charity." />
 
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
@@ -17,7 +17,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Pixtivity, where creativity does good" />
-    <meta property="og:description" content="Pixtivity was made by University of Portsmouth students to fundraise for our volunteering trip to Uganda with East African Playgrounds." />
+    <meta property="og:description" content="Pixtivity was made by University of Portsmouth students to fundraise for The Children's Society, a UK charity." />
     <meta property="og:url" content="http://pixtivity.org/" />
     <meta property="og:site_name" content="Pixtivity" />
     <meta property="og:image" content="{{ env('SITE_URL') }}/image.png" />
@@ -31,7 +31,7 @@
     <meta name="twitter:site" content="@hellopixtivity">
     <meta name="twitter:creator" content="@hellopixtivity">
     <meta name="twitter:title" content="Pixtivity, where creativity does good">
-    <meta name="twitter:description" content="Pixtivity was made by University of Portsmouth students to fundraise for our volunteering trip to Uganda with East African Playgrounds.">
+    <meta name="twitter:description" content="Pixtivity was made by University of Portsmouth students to fundraise for The Children's Society, a UK charity.">
     <meta name="twitter:image" content="{{ env('SITE_URL') }}/image.png">
 
 </head>
