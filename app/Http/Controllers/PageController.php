@@ -62,7 +62,7 @@ class PageController extends Controller
             $pixelDonation->save();
         }
 
-        $amount = number_format(count($request->get('pixels'))/2, 2);
+        $amount = number_format(count($request->get('pixels'))/4, 2);
 
         $donationUrl = JustGiving::getDonationUrl($paying->id, $amount);
 
