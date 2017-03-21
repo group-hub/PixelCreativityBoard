@@ -36,7 +36,6 @@
                     <option value="#ffffff">#ffffff</option>
                 </select>
             </div>
-            <div class="donate-more"></div>
             <a href="#donate" class="button donate">Donate &pound;<span id="donation-amount">0.00</span></a>
             <div class="anonymous-warning"><strong>Warning:</strong> If you make the donation anonymous, we can't save your pixels :(</div>
             <img src="/images/justgiving.png" alt="JustGiving" class="powered-by-just-giving" />
